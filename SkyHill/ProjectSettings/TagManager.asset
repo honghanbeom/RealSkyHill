@@ -44,23 +44,23 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Building
-    uniqueID: 820947167
+    uniqueID: 4153002049
     locked: 0
   - name: BackGround
-    uniqueID: 1126067683
+    uniqueID: 3713233083
     locked: 0
   - name: BackStair
-    uniqueID: 2560832551
+    uniqueID: 3804925253
     locked: 0
   - name: FrontStair
-    uniqueID: 101811203
+    uniqueID: 2081178415
     locked: 0
   - name: Clickable
-    uniqueID: 3919911419
+    uniqueID: 1346379755
     locked: 0
   - name: DarkUI
-    uniqueID: 59732989
+    uniqueID: 383049835
     locked: 0
   - name: Frame
-    uniqueID: 511254143
+    uniqueID: 1287339179
     locked: 0
