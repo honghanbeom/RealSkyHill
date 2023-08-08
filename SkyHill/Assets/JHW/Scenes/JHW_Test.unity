@@ -262,7 +262,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 292859389
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -129558724, guid: bbf4fa435bbc3f148b5f46f688ff585a, type: 3}
@@ -939,7 +939,7 @@ SpriteRenderer:
   m_Size: {x: 0.91, y: 0.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &485938813
@@ -1301,7 +1301,7 @@ SpriteRenderer:
   m_Size: {x: 0.09, y: 1.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &609015370
@@ -2298,7 +2298,7 @@ SpriteRenderer:
   m_Size: {x: 0.91, y: 0.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1272034813
@@ -2550,7 +2550,7 @@ SpriteRenderer:
   m_Size: {x: 0.09, y: 1.27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1607572633
@@ -3640,7 +3640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evPrefabs: {fileID: 6362374258766705661, guid: f65d2ad51aa2eb44abcb42b57710dcc3, type: 3}
-  gridSize: {x: 1, y: 97}
+  roomPrefabs: {fileID: 3730713294193735559, guid: 3ce6a0b8dd4cb044e8e0785f55f49a29, type: 3}
+  roomPrefabs2: {fileID: 1199404167946510838, guid: 6ff85b687790d54498aea8e82205a506, type: 3}
+  gridSize: {x: 3, y: 97}
   cellSize: {x: 2.8, y: 2}
 --- !u!483693784 &2112639205
 TilemapRenderer:
