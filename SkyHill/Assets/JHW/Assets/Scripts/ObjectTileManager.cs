@@ -61,6 +61,8 @@ public class ObjectTileManager : MonoBehaviour
     public GameObject evPrefabs;
     public GameObject roomPrefabs;
     public GameObject roomPrefabs2;
+    //public GameObject framePrefabs;
+
 
 
 
@@ -96,9 +98,9 @@ public class ObjectTileManager : MonoBehaviour
                 }
                 else if (x == 1)
                 {
-                    float xPos = (x * cellSize.x) + 4.55f;
+                    float xPos = (x * cellSize.x) - 6.01f;
 
-                    float yPos = (y * cellSize.y) - 192.13f;
+                    float yPos = (y * cellSize.y) - 193.8f;
 
 
 
@@ -108,9 +110,9 @@ public class ObjectTileManager : MonoBehaviour
                 }
                 else if (x == 2)
                 {
-                    float xPos = (x * cellSize.x) - 2.9f;
+                    float xPos = (x * cellSize.x) - 2.1f;
 
-                    float yPos = (y * cellSize.y) - 194.45f;
+                    float yPos = (y * cellSize.y) - 193.8f;
 
 
 
@@ -118,6 +120,18 @@ public class ObjectTileManager : MonoBehaviour
                     GameObject newObject = Instantiate(roomPrefabs2, spawnPosition, Quaternion.identity);
                     newObject.transform.parent = transform; // Optional: Set as child of the tilemap
                 }
+                //else if (x == 3)
+                //{
+                //    float xPos = (x * cellSize.x) - 0.2f;
+
+                //    float yPos = (y * cellSize.y) - 192.13f;
+
+
+
+                //    Vector3 spawnPosition = new Vector3(xPos, yPos, 0);
+                //    GameObject newObject = Instantiate(framePrefabs, spawnPosition, Quaternion.identity);
+                //    newObject.transform.parent = transform; // Optional: Set as child of the tilemap
+                //}
 
             }
                 
