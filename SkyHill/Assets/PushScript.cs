@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PushScript : MonoBehaviour
 {
-    int a = 2;
+    int a = 3;
     // Start is called before the first frame update
     void Start()
     {
