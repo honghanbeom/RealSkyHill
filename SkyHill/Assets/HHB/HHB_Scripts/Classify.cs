@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Classfy : MonoBehaviour
+public class Classify : MonoBehaviour
 {
     // 인벤 리스트
     List<int> myInvenList = new List<int>();
@@ -27,6 +27,7 @@ public class Classfy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 디버그용 
         for (int i = 0; i < myWeaponList.Count; i++)
         {
             Debug.LogFormat("myWeaponList ID: {0}", myWeaponList[i]);
@@ -73,14 +74,15 @@ public class Classfy : MonoBehaviour
         {
             for(int i = 0;  i < myInvenList.Count; i++) 
             {
-                Classify(myInvenList[i]);
+                Categorize(myInvenList[i]);
             }
         }
     }
     //} ClassifyAddList()
 
 
-    public void Classify(int id)
+    //{ Categorize()
+    public void Categorize(int id)
     {
         // (100 ~ 108) EMERGENCY => 의학 리스트에 추가
         if (id >= 100 && id <= 108)
@@ -112,9 +114,7 @@ public class Classfy : MonoBehaviour
         {
             myMediList.Add(id);
         }
-
-
-
-
     }
+    //} Categorize()
+
 }

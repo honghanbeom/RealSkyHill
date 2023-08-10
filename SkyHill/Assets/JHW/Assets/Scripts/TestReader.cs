@@ -6,7 +6,6 @@ using UnityEngine;
 
 public static class TestReader 
 {
-
     public static List<int> allData = new List<int>();
 
     // Start is called before the first frame update

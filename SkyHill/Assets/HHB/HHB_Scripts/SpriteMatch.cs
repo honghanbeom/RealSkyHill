@@ -14,6 +14,7 @@ public class SpriteMatch : MonoBehaviour
     public Sprite[] spoiledFoodSprites;
     public Sprite[] rootFoodSprites;
     public Sprite[] makingFoodSprites;
+
     // Start is called before the first frame update
     void Start()
     {
