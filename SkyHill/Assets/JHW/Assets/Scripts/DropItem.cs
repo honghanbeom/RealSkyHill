@@ -4,7 +4,7 @@ using System.Globalization;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public static class TestReader 
+public static class DropItem 
 {
 
     public static List<int> dropItemData = new List<int>();
