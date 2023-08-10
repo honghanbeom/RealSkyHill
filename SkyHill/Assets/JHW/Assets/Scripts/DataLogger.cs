@@ -8,7 +8,7 @@ public class DataLogger : MonoBehaviour
         TestReader.Initialize();
 
         // TestReader 클래스의 데이터 가져와서 로그 출력
-        foreach (int data in TestReader.allData)
+        foreach (int data in TestReader.dropItemData)
         {
             Debug.Log(data);
         }

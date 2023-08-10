@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TestTileObject : MonoBehaviour
+public class DropItem : MonoBehaviour
 {
     public GameObject[] referenceObjectPrefab; // 기준이 되는 GameObject 프리팹
     public GameObject[] objectPrefab;
