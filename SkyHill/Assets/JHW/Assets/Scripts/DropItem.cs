@@ -4,11 +4,7 @@ using System.Globalization;
 using Unity.VisualScripting;
 using UnityEngine;
 
-<<<<<<< HEAD
-public static class TestReader 
-=======
 public static class DropItem 
->>>>>>> origin/JHW
 {
 
     public static List<int> dropItemData = new List<int>();

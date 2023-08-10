@@ -1,28 +1,24 @@
 using UnityEngine;
 
-<<<<<<< HEAD
-public class DropItem : MonoBehaviour
-=======
 public class RandomTile : MonoBehaviour
->>>>>>> origin/JHW
 {
-    public GameObject[] referenceObjectPrefab; // ±âÁØÀÌ µÇ´Â GameObject ÇÁ¸®ÆÕ
+    public GameObject[] referenceObjectPrefab; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ GameObject ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public GameObject[] objectPrefab;
     public GameObject FrameObjectPrefab;
-    public float spacingRight = 1.0f;         // ¿À¸¥ÂÊ ¿ÀºêÁ§Æ® °£ °£°Ý
+    public float spacingRight = 1.0f;         // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public float spacingLeft = 1.0f;
 
     
 
     public float frameRight = 1.0f;
-    public float frameDown = 1.0f;  // ¿À¸¥ÂÊ ¿ÀºêÁ§Æ® °£ °£°Ý
+    public float frameDown = 1.0f;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
     public Vector2Int gridSize = new Vector2Int(5, 5);
     public Vector2 cellSize = new Vector2(1.0f, 1.0f);
 
 
-    private GameObject referenceObject;       // »ý¼ºµÈ ±âÁØ GameObject
+    private GameObject referenceObject;       // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ GameObject
 
 
 
@@ -75,15 +71,15 @@ public class RandomTile : MonoBehaviour
 
 
                 Vector3 spawnPosition = new Vector3(xPos, yPos, 0);
-                // ¿À¸¥ÂÊ¿¡ GameObject »ý¼º
+                // ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ GameObject ï¿½ï¿½ï¿½ï¿½
                 Vector3 rightSpawnPosition = spawnPosition + Vector3.right * spacingRight;
                 Instantiate(objectPrefab[rightRoom], rightSpawnPosition, Quaternion.identity);
 
-                // ¿ÞÂÊ¿¡ GameObject »ý¼º
+                // ï¿½ï¿½ï¿½Ê¿ï¿½ GameObject ï¿½ï¿½ï¿½ï¿½
                 Vector3 leftSpawnPosition = spawnPosition + Vector3.left * spacingLeft;
                 Instantiate(objectPrefab[leftRoom], leftSpawnPosition, Quaternion.identity);
 
-                // ¿ÞÂÊ¿¡ GameObject »ý¼º
+                // ï¿½ï¿½ï¿½Ê¿ï¿½ GameObject ï¿½ï¿½ï¿½ï¿½
                 Vector3 SpawnPosition = spawnPosition + Vector3.right * frameRight + Vector3.down * frameDown;
                 Instantiate(FrameObjectPrefab, SpawnPosition, Quaternion.identity);
             }
