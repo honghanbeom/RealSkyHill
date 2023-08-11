@@ -17,7 +17,8 @@ public static class DropItem
         List<Dictionary<string, object>> freshFood = CSVReader.Read("FRESHFOOD");
         List<Dictionary<string, object>> spoiledFood = CSVReader.Read("SPOILEDFOOD");
         List<Dictionary<string, object>> rootMaterial = CSVReader.Read("ROOTMATERIAL");
-        List<Dictionary<string, object>> rootWeapon = CSVReader.Read("MAKINGWEAPON");
+        List<Dictionary<string, object>> rootWeapon = CSVReader.Read("ROOTWEAPON");
+
 
 
 
