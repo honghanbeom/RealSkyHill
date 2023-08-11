@@ -226,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4964658767807409531, guid: 52b90f7b29316264d8d9873b3db64ee5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52b90f7b29316264d8d9873b3db64ee5, type: 3}
@@ -1409,6 +1409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baf1fae1927e8c4dac2db2af43a301e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myWeaponList: 
+  myMediList: 
+  myETCList: 
 --- !u!1001 &2005484216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1524,6 +1527,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8414188231247628543, guid: 8b02e955a904562498858c3ed1d6a387, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b02e955a904562498858c3ed1d6a387, type: 3}
 --- !u!1 &2114970465
@@ -1631,11 +1638,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1280923418913314298, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.95
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 1280923418913314298, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.2
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 1280923418913314298, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
       propertyPath: m_LocalPosition.z

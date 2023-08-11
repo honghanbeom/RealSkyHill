@@ -4,7 +4,7 @@ using System.Globalization;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public static class DropItem 
+public static class DropItem
 {
 
     public static List<int> dropItemData = new List<int>();
@@ -63,9 +63,5 @@ public static class DropItem
         //{
         //    Debug.Log(allData[i]);
         //}
-
-
-
-
     }
 }

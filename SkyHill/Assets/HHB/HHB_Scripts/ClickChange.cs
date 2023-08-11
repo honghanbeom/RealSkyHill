@@ -15,6 +15,7 @@ public class ClickChange : MonoBehaviour
     {
         gb = this.gameObject;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        DropItem.Initialize();
     }
 
     // Update is called once per frame
@@ -34,5 +35,19 @@ public class ClickChange : MonoBehaviour
                 spriteRenderer.sprite = changeImage;
             }
         }
+
+        
+        int randomIndex = Random.Range(0, DropItem.dropItemData.Count);
+        
+
+        // Scene에서 Classify 스크립트에 접근
+        Classify classifyScript = FindObjectOfType<Classify>();
+
+        // 랜덤한 아이템 ID를 Classify 스크립트의 myInvenList에 추가
+        classifyScript.Categorize(DropItem.dropItemData[randomIndex]);
+
+        classifyScript.DebugLog();
+
+
     }
 }

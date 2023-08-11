@@ -5,20 +5,20 @@ using UnityEngine;
 public class Classify : MonoBehaviour
 {
     // 인벤 리스트
-    List<int> myInvenList = new List<int>();
+    private List<int> myInvenList = new List<int>();
 
     // 나눠야할 리스트 (무기, 의학, 기타)
-    List<int> myWeaponList = new List<int>();
-    List<int> myMediList = new List<int>();
-    List<int> myETCList = new List<int>() ;
+    public List<int> myWeaponList = new List<int>();
+    public List<int> myMediList = new List<int>();
+    public List<int> myETCList = new List<int>() ;
     private void Awake()
     {
-        myInvenList.Add(100);
-        myInvenList.Add(700);
-        myInvenList.Add(900);
-        myInvenList.Add(806);
-        myInvenList.Add(605);
-        myInvenList.Add(401);
+        //myInvenList.Add(100);
+        //myInvenList.Add(700);
+        //myInvenList.Add(900);
+        //myInvenList.Add(806);
+        //myInvenList.Add(605);
+        //myInvenList.Add(401);
 
         // !나중에 위치 변경 필수
         ClassifyAddList();
@@ -27,21 +27,7 @@ public class Classify : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 디버그용 
-        for (int i = 0; i < myWeaponList.Count; i++)
-        {
-            Debug.LogFormat("myWeaponList ID: {0}", myWeaponList[i]);
-        }
-;
-        for (int i = 0; i < myMediList.Count; i++)
-        {
-            Debug.LogFormat("myMediList ID: {0}", myMediList[i]);
-        }
 
-        for (int i = 0; i < myETCList.Count; i++)
-        {
-            Debug.LogFormat("myETCList ID: {0}", myETCList[i]);
-        }
     }
 
     // Update is called once per frame
@@ -114,7 +100,35 @@ public class Classify : MonoBehaviour
         {
             myMediList.Add(id);
         }
+
+        // 분류하고 리스트 초기화
+        myInvenList.Remove(id);
     }
     //} Categorize()
+
+    //{ DebugLog()
+    // 디버그용 
+    public void DebugLog()
+    {
+        Debug.Log("인벤");
+        for (int i = 0; i < myWeaponList.Count; i++)
+        {
+            Debug.Log("무기");
+            Debug.LogFormat("myWeaponList ID: {0}", myWeaponList[i]);
+        }
+;
+        for (int i = 0; i < myMediList.Count; i++)
+        {
+            Debug.Log("의학");   
+            Debug.LogFormat("myMediList ID: {0}", myMediList[i]);
+        }
+
+        for (int i = 0; i < myETCList.Count; i++)
+        {
+            Debug.Log("기타");
+            Debug.LogFormat("myETCList ID: {0}", myETCList[i]);
+        }
+    }
+    //{ DebugLog()
 
 }

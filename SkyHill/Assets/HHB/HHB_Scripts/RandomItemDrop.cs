@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class RandomItemDrop : MonoBehaviour
 {
-    
+    private void Awake()
+    {
+
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
