@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EleDoor
   - Clickable
+  - ClickMoving
   layers:
   - Default
   - TransparentFX
