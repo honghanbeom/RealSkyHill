@@ -18,7 +18,6 @@ public class ClickDisable : MonoBehaviour
        
     }
 
-
     //{ fill amount로 열리는 효과 만들고 StartCourtine으로 일정 시간 후 원래대로 되돌리기
     private void OnMouseDown()
     {
