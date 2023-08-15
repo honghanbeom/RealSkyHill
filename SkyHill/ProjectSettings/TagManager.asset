@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EleDoor
   - Clickable
+  - PlayerMoving
   layers:
   - Default
   - TransparentFX
@@ -63,4 +64,7 @@ TagManager:
     locked: 0
   - name: Frame
     uniqueID: 1287339179
+    locked: 0
+  - name: DarkClick
+    uniqueID: 3689794367
     locked: 0
