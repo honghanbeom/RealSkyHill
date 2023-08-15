@@ -19,12 +19,7 @@ public class CreaftContent : MonoBehaviour
     float xPos = -20f;
     float yPos = 275f;
 
-    List<Dictionary<string, object>> makingWeapon = CSVReader.Read("MAKINGWEAPON");
-    List<Dictionary<string, object>> rootWeapon = CSVReader.Read("ROOTWEAPON");
-    List<Dictionary<string, object>> rootMaterial = CSVReader.Read("ROOTMATERIAL");
-    List<Dictionary<string, object>> makingMaterial = CSVReader.Read("MAKINGMATERIAL");
-    List<Dictionary<string, object>> rootFood = CSVReader.Read("ROOTFOOD");
-    List<Dictionary<string, object>> freshFood = CSVReader.Read("FRESHFOOD");
+
 
     int com1;
     int com2;
@@ -101,6 +96,12 @@ public class CreaftContent : MonoBehaviour
         //Debug.Log(NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM2"].ToString()));
         //Debug.Log(NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM3"].ToString()));
         //Debug.Log(NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM4"].ToString()));
+        List<Dictionary<string, object>> makingWeapon = CSVReader.Read("MAKINGWEAPON");
+        List<Dictionary<string, object>> rootWeapon = CSVReader.Read("ROOTWEAPON");
+        List<Dictionary<string, object>> rootMaterial = CSVReader.Read("ROOTMATERIAL");
+        List<Dictionary<string, object>> makingMaterial = CSVReader.Read("MAKINGMATERIAL");
+        List<Dictionary<string, object>> rootFood = CSVReader.Read("ROOTFOOD");
+        List<Dictionary<string, object>> freshFood = CSVReader.Read("FRESHFOOD");
 
         com1 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM1"].ToString());
         com2 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM2"].ToString());
