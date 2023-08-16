@@ -7,6 +7,7 @@ public class WeaponButtonClick : MonoBehaviour, IPointerClickHandler
 {
     public GameObject weaponScroll;
 
+
     private void Start()
     {
         weaponScroll.SetActive(false);

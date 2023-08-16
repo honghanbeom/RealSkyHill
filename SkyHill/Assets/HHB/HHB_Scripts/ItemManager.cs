@@ -46,7 +46,7 @@ public class ItemManager : MonoBehaviour
 
     public void ItemRoutine()
     {
-        Debug.Log("ItemManager±Â");
+        //Debug.Log("ItemManager±Â");
         ClassifyAddList();
         myInvenList.Clear();
         OnItemsUpdated?.Invoke();
