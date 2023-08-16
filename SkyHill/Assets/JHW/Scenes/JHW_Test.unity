@@ -671,8 +671,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rookiePreafab: {fileID: 0}
   neighbourPreafab: {fileID: 0}
+  spacingRight: 1
+  spacingLeft: 1
   spawnPoint: {x: 0, y: 0, z: 0}
   spawnPoint1: {x: 0, y: 0, z: 0}
+  monsterCount: {x: 5, y: 5}
 --- !u!4 &745728800
 Transform:
   m_ObjectHideFlags: 0
@@ -950,8 +953,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rookiePreafab: {fileID: 6252768423200717915, guid: 593ba8983f5a9824b92eeb166ca643c0, type: 3}
   neighbourPreafab: {fileID: 3052473852422410874, guid: ad821c28e6d6d1f4e9db5ac7886d8fbc, type: 3}
+  spacingRight: 1
+  spacingLeft: 1
   spawnPoint: {x: 0, y: 0, z: 0}
   spawnPoint1: {x: 0, y: 0, z: 0}
+  monsterCount: {x: 5, y: 5}
 --- !u!1 &1283760702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1116,7 @@ GameObject:
   - component: {fileID: 2112639206}
   - component: {fileID: 2112639205}
   - component: {fileID: 2112639207}
+  - component: {fileID: 2112639208}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1272,6 +1279,25 @@ MonoBehaviour:
   frameDown: 0.08
   gridSize: {x: 1, y: 97}
   cellSize: {x: 2.8, y: 2.1}
+--- !u!114 &2112639208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112639202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2386e9207c2ef0340afabe25a601021f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rookiePreafab: {fileID: 6252768423200717915, guid: 593ba8983f5a9824b92eeb166ca643c0, type: 3}
+  neighbourPreafab: {fileID: 3052473852422410874, guid: ad821c28e6d6d1f4e9db5ac7886d8fbc, type: 3}
+  spacingRight: 3.38
+  spacingLeft: 2.99
+  spawnPoint: {x: 0, y: 0, z: 0}
+  spawnPoint1: {x: 0, y: 0, z: 0}
+  monsterCount: {x: 1, y: 97}
 --- !u!4 &1670789331350634477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7885918134791927762, guid: ae8fc507402825641bbc025238449836, type: 3}
