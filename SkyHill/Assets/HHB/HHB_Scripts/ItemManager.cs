@@ -1,36 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class ItemManager : MonoBehaviour
 {
     public static ItemManager itemManager;
+    //InventoryContent inventoryContent;
     // 인벤 리스트
-    public List<int> myInvenList = new List<int>();
+    public static List<int> myInvenList = new List<int>();
 
     // 나눠야할 리스트 (무기, 의학, 기타)
     public static List<int> myWeaponList = new List<int>();
     public static List<int> myMediList = new List<int>();
     public static List<int> myETCList = new List<int>() ;
 
-    
+    public event Action OnItemsUpdated;
+
     private void Awake()
     {
         itemManager = this;
+        //inventoryContent = GetComponent<InventoryContent>();
         //myInvenList.Add(100);
         //myInvenList.Add(700);
         //myInvenList.Add(900);
         //myInvenList.Add(806);
         //myInvenList.Add(605);
-        myInvenList.Add(401);
-        myInvenList.Add(401);
-        myInvenList.Add(402);
-        myInvenList.Add(403);
-        myInvenList.Add(403);
-        myInvenList.Add(402);
-        myInvenList.Add(402);
-        myInvenList.Add(402);
         //myInvenList.Add(600);
+
+
+        //myInvenList.Add(406);
+        //myInvenList.Add(306);
 
         //myInvenList.Add(502);
         //myInvenList.Add(505);
@@ -40,24 +40,35 @@ public class ItemManager : MonoBehaviour
         //    myInvenList.Add(i);
         //}
 
-        // !나중에 위치 변경 필수
-        ClassifyAddList();
-        DebugLog();
-
-        myInvenList.Clear();
-
+        //!나중에 위치 변경 필수
 
     }
+
+    public void ItemRoutine()
+    {
+        Debug.Log("ItemManager굿");
+        ClassifyAddList();
+        myInvenList.Clear();
+        OnItemsUpdated?.Invoke();
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
+        //myInvenList.Add(406);
+        //myInvenList.Add(306);
+        myInvenList.Add(406);
+        myInvenList.Add(306);
+        ItemRoutine();
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        //ClassifyAddList();
+        //myInvenList.Clear();
 
     }
 
@@ -138,35 +149,58 @@ public class ItemManager : MonoBehaviour
         {
             myMediList.Add(id);
         }
-
     }
+
+    //// 아아템 추가시 Action을 통해서 추가 & 출력
+    //public void AddItem(int itemId)
+    //{
+    //    myInvenList.Add(itemId);
+    //    OnItemAdded?.Invoke();
+    //    ClassifyAddList();
+    //    myInvenList.Clear();
+    //    inventoryContent.WeaponItemCreate();
+
+
+    //}
+
+    //// 아이템 제거시 Action을 통해서 제거 & 출력 
+    //public void RemoveItem(int itemId)
+    //{
+    //    myETCList.Remove(itemId);
+    //    myMediList.Remove(itemId);
+    //    myWeaponList.Remove(itemId);
+    //    OnItemRemoved?.Invoke();
+    //    inventoryContent.WeaponItemCreate();
+    //}
+
+
     //} Categorize()
 
     //{ DebugLog()
     // 디버그용 
-    public void DebugLog()
-    {
-        Debug.Log("--------------인벤-----------------");
-        Debug.Log("------------무기-----------");
-        for (int i = 0; i < myWeaponList.Count; i++)
-        {
-            Debug.LogFormat("myWeaponList ID: {0}", myWeaponList[i]);
-        }
-;
-        Debug.Log("------------의학-----------");   
-        for (int i = 0; i < myMediList.Count; i++)
-        {
-            Debug.LogFormat("myMediList ID: {0}", myMediList[i]);
-        }
+//    public void DebugLog()
+//    {
+//        Debug.Log("--------------인벤-----------------");
+//        Debug.Log("------------무기-----------");
+//        for (int i = 0; i < myWeaponList.Count; i++)
+//        {
+//            Debug.LogFormat("myWeaponList ID: {0}", myWeaponList[i]);
+//        }
+//;
+//        Debug.Log("------------의학-----------");
+//        for (int i = 0; i < myMediList.Count; i++)
+//        {
+//            Debug.LogFormat("myMediList ID: {0}", myMediList[i]);
+//        }
 
-        Debug.Log("------------기타-----------");
-        for (int i = 0; i < myETCList.Count; i++)
-        {
-            Debug.LogFormat("myETCList ID: {0}", myETCList[i]);
-        }
-        Debug.Log("--------------인벤끝----------------");
-    }
-    //{ DebugLog()
+//        Debug.Log("------------기타-----------");
+//        for (int i = 0; i < myETCList.Count; i++)
+//        {
+//            Debug.LogFormat("myETCList ID: {0}", myETCList[i]);
+//        }
+//        Debug.Log("--------------인벤끝----------------");
+//    }
+//    //{ DebugLog()
 
 
 }

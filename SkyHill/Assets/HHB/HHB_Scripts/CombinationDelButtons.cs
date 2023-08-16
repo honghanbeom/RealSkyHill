@@ -5,10 +5,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CombinationButtons : MonoBehaviour, IPointerClickHandler
+public class CombinationDelButtons : MonoBehaviour, IPointerClickHandler
 {
     public Image[] combinationImages;
-    ClickImage clickImage;
+
 
     //List<GameObject> activeButtons = new List<GameObject>();
 
@@ -59,13 +59,9 @@ public class CombinationButtons : MonoBehaviour, IPointerClickHandler
     //    }
     //}
 
-    void Awake()
-    { 
-        clickImage = GetComponent<ClickImage>();
-    }
-
     public void OnPointerClick(PointerEventData eventData)
     {
+
         for (int i = 0; i < combinationImages.Length; i++)
         {
             ItemList.itemList.ImageMatch(-1, combinationImages[i]);

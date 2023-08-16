@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +19,6 @@ public class CreaftContent : MonoBehaviour
     public Sprite[] changeSprites;
     float xPos = -20f;
     float yPos = 275f;
-
-
-
-    int com1;
-    int com2;
-    int com3;
-    int com4;
-
 
     // Start is called before the first frame update
     void Awake()
@@ -86,27 +79,18 @@ public class CreaftContent : MonoBehaviour
 
     public void CombinationImageMatch(int buttonIndex)
     {
-        //Debug.LogFormat("{0}", buttonIndex);
-        //Debug.LogFormat(makingWeapon[buttonIndex]["COM1"].ToString());
-        //Debug.LogFormat(makingWeapon[buttonIndex]["COM2"].ToString());
-        //Debug.LogFormat(makingWeapon[buttonIndex]["COM3"].ToString());
-        //Debug.LogFormat(makingWeapon[buttonIndex]["COM4"].ToString());
-
-        //Debug.Log(NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM1"].ToString()));
-        //Debug.Log(NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM2"].ToString()));
-        //Debug.Log(NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM3"].ToString()));
-        //Debug.Log(NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM4"].ToString()));
         List<Dictionary<string, object>> makingWeapon = CSVReader.Read("MAKINGWEAPON");
-        List<Dictionary<string, object>> rootWeapon = CSVReader.Read("ROOTWEAPON");
-        List<Dictionary<string, object>> rootMaterial = CSVReader.Read("ROOTMATERIAL");
-        List<Dictionary<string, object>> makingMaterial = CSVReader.Read("MAKINGMATERIAL");
-        List<Dictionary<string, object>> rootFood = CSVReader.Read("ROOTFOOD");
-        List<Dictionary<string, object>> freshFood = CSVReader.Read("FRESHFOOD");
+        Dictionary<string, object> itemInfo = makingWeapon[buttonIndex];
+        //List<Dictionary<string, object>> rootWeapon = CSVReader.Read("ROOTWEAPON");
+        //List<Dictionary<string, object>> rootMaterial = CSVReader.Read("ROOTMATERIAL");
+        //List<Dictionary<string, object>> makingMaterial = CSVReader.Read("MAKINGMATERIAL");
+        //List<Dictionary<string, object>> rootFood = CSVReader.Read("ROOTFOOD");
+        //List<Dictionary<string, object>> freshFood = CSVReader.Read("FRESHFOOD");
 
-        com1 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM1"].ToString());
-        com2 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM2"].ToString());
-        com3 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM3"].ToString());
-        com4 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM4"].ToString());
+        int com1 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM1"].ToString());
+        int com2 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM2"].ToString());
+        int com3 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM3"].ToString());
+        int com4 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM4"].ToString());
 
         Debug.Log(com1);
         Debug.Log(com2);
@@ -115,6 +99,21 @@ public class CreaftContent : MonoBehaviour
 
 
         int[] com = {com1, com2, com3, com4};
+
+        CombinationCreateButton.combinationList.Clear();
+        CombinationCreateButton.combinationNeedList.Clear();
+
+        for (int i = 1; i <= 4; i++)
+        {
+            string comKey = "COM" + i;
+            if (itemInfo.ContainsKey(comKey))
+            {
+                int comId = NameToIDChanger.n2D.NameToID(itemInfo[comKey].ToString());
+                CombinationCreateButton.combinationNeedList.Add(comId);
+            }
+        }
+        int makeId = NameToIDChanger.n2D.NameToID(itemInfo["WEAPON_NAME"].ToString());
+        CombinationCreateButton.combinationList.Add(makeId);
 
         for (int i = 0; i < combinationImage.Length; i++)
         {
@@ -140,58 +139,49 @@ public class CreaftContent : MonoBehaviour
         //ItemList.itemList.ImageMatch(com4, combinationImage[3]);
     }
 
-    // Update is called once per frame
+    #region LEGACY
+    //public void CreateItem(int[] com, int buttonIndex)
+    //{
+    //    bool canCraft = true;
+    //    foreach (int itemId in com)
+    //    {
+    //        if (!(ItemManager.myWeaponList.Contains(itemId) ||
+    //            ItemManager.myETCList.Contains(itemId) ||
+    //            ItemManager.myMediList.Contains(itemId)))
+    //        {
+    //            canCraft = false;
+    //            break;
+    //        }
+    //    }
 
-    public void CreateItem(int com1, int com2, int com3, int com4)
-    {
-        int[] com = { com1, com2, com3, com4 };
-        // 나의 리스트에서 제거
-        foreach (int itemId in com)
-        {
-            if (ItemManager.myWeaponList.Contains(itemId))
-            { 
-                ItemManager.myWeaponList.Remove(itemId);    
-            }
-            else if (ItemManager.myETCList.Contains(itemId))
-            {
-                ItemManager.myETCList.Remove(itemId);
-            }
-            else if (ItemManager.myMediList.Contains(itemId))
-            {
-                ItemManager.myMediList.Remove(itemId);
-            }
-        }
+    //    if (canCraft)
+    //    {
+    //        foreach (int itemId in com)
+    //        {
+    //            if (ItemManager.myWeaponList.Contains(itemId))
+    //            {
+    //                ItemManager.myWeaponList.Remove(itemId);
+    //            }
+    //            else if (ItemManager.myETCList.Contains(itemId))
+    //            {
+    //                ItemManager.myETCList.Remove(itemId);
+    //            }
+    //            else if (ItemManager.myMediList.Contains(itemId))
+    //            {
+    //                ItemManager.myMediList.Remove(itemId);
+    //            }
+    //        }
 
-        // 인벤 리스트에 추가
-
-
-    }
-
-    public void CheckmyList(int com1, int com2, int com3, int com4)
-    {
-        int[] com = { com1, com2, com3, com4 };
-        bool creaftAvailable = true;
-
-        foreach (int itemId in com)
-        {
-            if (!ItemManager.myWeaponList.Contains(itemId) &&
-              !ItemManager.myETCList.Contains(itemId) &&
-               !ItemManager.myMediList.Contains(itemId))
-            {
-                creaftAvailable = false;
-                break;
-            }
-        }
-
-        if (creaftAvailable == true)
-        {
-            CreateItem(com1, com2, com3, com4);
-        }
-    }
+    //        List<Dictionary<string, object>> makingWeapon = CSVReader.Read("MAKINGWEAPON");
+    //        int myItem = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["WEAPON_NAME"].ToString());
+    //        ItemManager.myInvenList.Add(myItem);
+    //    }
+    //}
+    #endregion
 
 
     void Update()
     {
-
+ 
     }
 }

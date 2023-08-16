@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
 public class ClickImage : MonoBehaviour, IPointerClickHandler
 {
-    public ButtonController buttonController;
     public GameObject clickedEffect;
     public bool clickedImage = false;
+    public ButtonController buttonController;
 
 
     public void Awake()
     {
-        buttonController =
-            GameObject.Find("Content").GetComponent<ButtonController>();
+        //buttonController =
+        //GameObject.Find("Content").GetComponent<ButtonController>(); 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        buttonController = transform.parent.GetComponent<ButtonController>();
         ButtonActiveOne();
     }
 
@@ -42,6 +42,7 @@ public class ClickImage : MonoBehaviour, IPointerClickHandler
 
         }
     }
-
-
 }
+
+
+

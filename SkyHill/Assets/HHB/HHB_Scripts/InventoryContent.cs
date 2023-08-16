@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class InventoryContent : MonoBehaviour
 {
+    public static InventoryContent inventoryContent; 
     public GameObject magicItemBox;
 
     RectTransform rectTransform;
     RectTransform[] rectTransformChild;
-
+    private List<GameObject> instantiatedItems = new List<GameObject>();
 
     public Sprite[] changeSprites;
+
 
 
     private float xPos = -170f;
@@ -21,20 +24,15 @@ public class InventoryContent : MonoBehaviour
     void Awake()
     {
 
+        ItemManager.itemManager.OnItemsUpdated += UpdateItem;
+
     }
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void UpdateItem()
     {
         WeaponItemCreate();
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Debug.Log("InventoryContent±Â");
     }
 
     #region LEGACY
@@ -58,18 +56,33 @@ public class InventoryContent : MonoBehaviour
     //    WeaponPosition();
     //}
     #endregion
-    void WeaponItemCreate()
+
+
+
+    public void WeaponItemCreate()
     {
+
+
+
+        foreach (var item in instantiatedItems)
+        {
+            Destroy(item);
+        }
+        instantiatedItems.Clear();
+
+        for (int i = 0; i < ItemManager.myWeaponList.Count; i++)
+        {
+            Debug.Log(ItemManager.myWeaponList[i]);
+        }
         rectTransform = GetComponent<RectTransform>();
 
         foreach (int itemId in ItemManager.myWeaponList)
         {
+
             GameObject myWeaponItems = Instantiate(magicItemBox, rectTransform);
-
+            instantiatedItems.Add(myWeaponItems);
             Image itemImage = myWeaponItems.GetComponent<Image>();
-
             ItemList.itemList.ImageMatch(itemId, itemImage);
-
             myWeaponItems.GetComponent<MagicBox>().itemId = itemId;
         }
 
@@ -96,5 +109,8 @@ public class InventoryContent : MonoBehaviour
 
             rectTransformChild[i].anchoredPosition = new Vector2(xPosition, yPosition);
         }
+
     }
+
+
 }

@@ -47,7 +47,7 @@ public class ItemList : MonoBehaviour
         // (301 ~ 324) MAKINGWEAPON 
         if (id >= 301 && id <= 324)
         {
-            int index = id - 300;
+            int index = id - 301;
             image.sprite = makingWeaponSprites[index];
         }
         // (400 ~ 406) ROOTWEAPON
@@ -59,7 +59,7 @@ public class ItemList : MonoBehaviour
         // (501 ~ 512) MAKINGMATERIAL
         else if (id >= 501 && id <= 512)
         {
-            int index = id - 500;
+            int index = id - 501;
             image.sprite = makingMaterialSprites[index];
         }
         // (600 ~ 605) ROOTMATERIAL 

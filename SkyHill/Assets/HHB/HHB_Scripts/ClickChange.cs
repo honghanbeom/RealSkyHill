@@ -43,7 +43,5 @@ public class ClickChange : MonoBehaviour
 
         // 랜덤한 아이템 ID를 Classify 스크립트의 myInvenList에 추가
         classifyScript.Categorize(DropItem.dropItemData[randomIndex]);
-
-        classifyScript.DebugLog();
     }
 }
