@@ -80,6 +80,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1574323796372324266, guid: 6ce19ca5941992b4c99307db3b6b90c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574323796372324266, guid: 6ce19ca5941992b4c99307db3b6b90c0, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -173,3 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blackOut: {fileID: 8610748526052929932}
+  uiImage: {fileID: 5983944706193479787, guid: 588d88cf466edde42ab226590e2c1510, type: 3}
+  uiImage1: {fileID: 5641806420841974587, guid: 858b151cbdacec6418d1671df643e006, type: 3}
+  uiImage2: {fileID: 962566891151860870, guid: cb37289848ec4ea4398c2a6cfaa279da, type: 3}
