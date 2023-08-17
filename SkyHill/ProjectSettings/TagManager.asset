@@ -69,3 +69,6 @@ TagManager:
   - name: DarkClick
     uniqueID: 3689794367
     locked: 0
+  - name: FightUI
+    uniqueID: 3101329647
+    locked: 0

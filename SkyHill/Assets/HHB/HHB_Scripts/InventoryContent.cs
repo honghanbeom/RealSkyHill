@@ -209,7 +209,7 @@ public class InventoryContent : MonoBehaviour
     private IEnumerator WaitForPositionSetting()
     {
         // 프레임 늦추기
-        yield return new WaitForNextFrameUnit();
+        yield return new WaitForEndOfFrame();
         // 파괴된 rectTransform을 새로 생성
         rectTransformChild = new RectTransform[rectTransform.childCount];
         for (int i = 0; i < rectTransform.childCount; i++)

@@ -38,10 +38,7 @@ public class ClickChange : MonoBehaviour
         
         int randomIndex = Random.Range(0, DropItem.dropItemData.Count);
 
-        // Scene에서 Classify 스크립트에 접근
-        ItemManager classifyScript = FindObjectOfType<ItemManager>();
-
-        // 랜덤한 아이템 ID를 Classify 스크립트의 myInvenList에 추가
-        classifyScript.Categorize(DropItem.dropItemData[randomIndex]);
+        ItemManager.myInvenList.Add(randomIndex);
+        ItemManager.itemManager.ItemRoutine();
     }
 }

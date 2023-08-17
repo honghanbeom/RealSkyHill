@@ -6,51 +6,42 @@ using UnityEngine.EventSystems;
 public class MagicBox : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler
 {
     public int itemId { get; set; }
+    private HpItem hpItem;
+
+    private void Awake()
+    {
+
+    }
 
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.LogFormat("{0}", itemId);
+        hpItem = FindObjectOfType<HpItem>();
+        // 마우스 우클릭
         if (eventData.button == PointerEventData.InputButton.Right)
         {
+            Debug.LogFormat("{0}", itemId);
             if (ItemManager.myMediList.Contains(itemId))
             {
-                //! 끝에 리스트에서 제거하는 기능 필수
-
-
                 // EMERGENCY
                 if (itemId >= 100 && itemId <= 108)
-                { 
-
-
-                    ItemManager.myMediList.Remove(itemId);
-                    ItemManager.itemManager.ItemRoutine();
-                }
-                // FRESHFOOD
-                if (itemId >= 700 && itemId <= 713)
                 {
-                    
-
-                    ItemManager.myMediList.Remove(itemId);
-                    ItemManager.itemManager.ItemRoutine();
+                    Debug.LogFormat("유저 체력 : {0}",UserInformation.player.hp);
+                    hpItem.UseHealthItem(itemId);
+                    Debug.LogFormat("유저 체력 : {0}", UserInformation.player.hp);
                 }
-                // SPOILEDFOOD
-                if (itemId >= 800 && itemId <= 813)
+                // (700 ~ 713) FRESHFOOD, (900~917) ROOTFOOD, (1000~1016) MAKINGFOOD
+                else
                 {
-
-
-                    ItemManager.myMediList.Remove(itemId);
-                    ItemManager.itemManager.ItemRoutine();
+                    Debug.LogFormat("유저 배고픔 지수 : {0}", UserInformation.player.hunger);
+                    hpItem.UseFoodItem(itemId);
+                    Debug.LogFormat("유저 배고픔 지수 : {0}", UserInformation.player.hunger);
                 }
-
-
-
             }
             if (ItemManager.myWeaponList.Contains(itemId))
             { 
                 // csv 읽어서 아이템 장착하고 밑의 이미지 바꾸는 효과 적용~
-            }
-            
+            }           
         }
     }
 

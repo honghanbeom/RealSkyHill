@@ -5,31 +5,31 @@ using UnityEngine;
 public class UserInformation : MonoBehaviour
 {
 
-    public static UserInformation Instance;
+    public static UserInformation player;
 
-    static public float hp = 100.0f;
-    static public float hunger = 50.0f;
-    static public float minAttackDamage = 4.0f;
-    static public float maxAttackDamage = 10.0f;
-    static public int exp = 0;
-    static public bool poision = false;
-    static public int str = 5;
-    static public int spd = 5;
-    static public int dex = 5;
-    static public int hit = 5;
-    static public int userLevel = 1;
-    static public int skillPoint = 0;
+    public float hp = 50f;
+    public float hunger = 50.0f;
+    public float minAttackDamage = 4.0f;
+    public float maxAttackDamage = 10.0f;
+    public int exp = 0;
+    public bool poision = false;
+    public int str = 5;
+    public int spd = 5;
+    public int dex = 5;
+    public int hit = 5;
+    public int userLevel = 1;
+    public int skillPoint = 0;
 
     public void Awake()
     {
-        if(Instance == null)
+        if(player == null)
         {
-            Instance = this;
+            player = this;
 
         }
         else
         {
-            DontDestroyOnLoad(Instance);
+            DontDestroyOnLoad(player);
         }
 
     }
