@@ -19,11 +19,17 @@ public class NameToIDChanger : MonoBehaviour
         List<Dictionary<string, object>> emergency = CSVReader.Read("EMERGENCY");
         List<Dictionary<string, object>> freshFood = CSVReader.Read("FRESHFOOD");
         List<Dictionary<string, object>> makingFood = CSVReader.Read("MAKINGFOOD");
+        List<Dictionary<string, object>> vipRoom = CSVReader.Read("VIPROOM");
+        List<Dictionary<string, object>> rootFood = CSVReader.Read("ROOTFOOD");
 
 
 
 
         int id = FindIDByName(makingWeapon, "WEAPON_NAME", Name);
+        if (id == -1)
+        {
+            id = FindIDByName(makingFood, "FOOD_NAME", Name);
+        }
         if (id == -1)
         {
             id = FindIDByName(rootMaterial, "MATERIAL_NAME", Name);
@@ -38,16 +44,22 @@ public class NameToIDChanger : MonoBehaviour
         }
         if (id == -1)
         {
-            id = FindIDByName(emergency, "FRESHFOOD", Name);
+            id = FindIDByName(freshFood, "FOOD_NAME", Name);
         }
         if (id == -1)
         {
-            id = FindIDByName(freshFood, "EMERGENCY", Name);
+            id = FindIDByName(emergency, "EMERGENCY_NAME", Name);
+        }
+
+        if (id == -1)
+        {
+            id = FindIDByName(vipRoom, "VIPROOM", Name);
         }
         if (id == -1)
         {
-            id = FindIDByName(makingFood, "MAKINGFOOD", Name);
+            id = FindIDByName(rootFood, "FOOD_NAME", Name);
         }
+
         return id;
     }
 

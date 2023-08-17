@@ -11,17 +11,25 @@ public class CreaftContent : MonoBehaviour
 {
     public GameObject prefab;
     public Image[] combinationImage;
-    private Color[] originalColors;
-
-    RectTransform rectTransform;
-    RectTransform[] rectTransformChild;
-
     public Sprite[] changeSprites;
+
+    [SerializeField]
+    protected Color[] originalColors;
+    [SerializeField]
+    protected RectTransform rectTransform;
+    [SerializeField]
+    protected RectTransform[] rectTransformChild;
+
     float xPos = -20f;
     float yPos = 275f;
 
     // Start is called before the first frame update
     void Awake()
+    {
+        CreaftAwake();
+    }
+
+    public virtual void CreaftAwake()
     {
         rectTransform = GetComponent<RectTransform>();
 
@@ -52,7 +60,9 @@ public class CreaftContent : MonoBehaviour
         }
 
         Position();
+
     }
+
 
     public void Position()
     {
@@ -77,7 +87,7 @@ public class CreaftContent : MonoBehaviour
         }
     }
 
-    public void CombinationImageMatch(int buttonIndex)
+    public virtual void CombinationImageMatch(int buttonIndex)
     {
         List<Dictionary<string, object>> makingWeapon = CSVReader.Read("MAKINGWEAPON");
         Dictionary<string, object> itemInfo = makingWeapon[buttonIndex];
@@ -92,10 +102,10 @@ public class CreaftContent : MonoBehaviour
         int com3 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM3"].ToString());
         int com4 = NameToIDChanger.n2D.NameToID(makingWeapon[buttonIndex]["COM4"].ToString());
 
-        Debug.Log(com1);
-        Debug.Log(com2);
-        Debug.Log(com3);
-        Debug.Log(com4);
+        //Debug.Log(com1);
+        //Debug.Log(com2);
+        //Debug.Log(com3);
+        //Debug.Log(com4);
 
 
         int[] com = {com1, com2, com3, com4};
@@ -115,8 +125,14 @@ public class CreaftContent : MonoBehaviour
         int makeId = NameToIDChanger.n2D.NameToID(itemInfo["WEAPON_NAME"].ToString());
         CombinationCreateButton.combinationList.Add(makeId);
 
+
+
         for (int i = 0; i < combinationImage.Length; i++)
         {
+            foreach (Image image in combinationImage)
+            {
+                image.gameObject.SetActive(true);
+            }
             // 만약 내가 아이템을 가지고 있지 않다면
             if (!(ItemManager.myWeaponList.Contains(com[i]) ||
                 ItemManager.myETCList.Contains(com[i])) ||

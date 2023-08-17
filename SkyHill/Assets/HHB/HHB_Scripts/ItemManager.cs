@@ -58,8 +58,24 @@ public class ItemManager : MonoBehaviour
     {
         //myInvenList.Add(406);
         //myInvenList.Add(306);
+        // 15개 12개 나오는중
         myInvenList.Add(406);
         myInvenList.Add(306);
+        myInvenList.Add(600);
+        myInvenList.Add(601);
+        myInvenList.Add(602);
+        myInvenList.Add(100);
+        myInvenList.Add(101);
+        myInvenList.Add(504);
+        myInvenList.Add(504);
+        myInvenList.Add(801);
+        myInvenList.Add(1000);
+        myInvenList.Add(1001);
+        myInvenList.Add(1002);
+        myInvenList.Add(915);
+        myInvenList.Add(705);
+        myInvenList.Add(901);
+        myInvenList.Add(905);
         ItemRoutine();
 
     }
@@ -146,6 +162,11 @@ public class ItemManager : MonoBehaviour
         }
         // (900 ~ 917) ROOTFOOD => 의학 리스트에 추가
         if (id >= 900 && id <= 917)
+        {
+            myMediList.Add(id);
+        }
+        // (900 ~ 917) MAKINGFOOD => 의학 리스트에 추가
+        if (id >= 1000 && id <= 1016)
         {
             myMediList.Add(id);
         }

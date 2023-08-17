@@ -16,6 +16,7 @@ public class ItemList : MonoBehaviour
     public Sprite[] spoiledFoodSprites;
     public Sprite[] rootFoodSprites;
     public Sprite[] makingFoodSprites;
+    public Sprite[] vipSprites;
 
     private void Awake()
     {

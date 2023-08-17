@@ -14,12 +14,16 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
     public static List<int> combinationList = new List<int>();
     public static List<int> combinationNeedList = new List<int>();
     public Image[] combinationImages;
-    public Image completeImages;
+    public Image completeImage;
+
+    //List<int> duplicateId = new List<int>();
+    //int sameID = default;
+
 
     void Awake()
     {
        //itemManager = GetComponent<ItemManager>();
-       completeImages = GetComponent<Image>();
+       //completeImage = GetComponent<Image>();
     }
 
 
@@ -43,7 +47,7 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
         //}
         //Debug.Log(combinationList[0]);
 
-        if (VerifyItemsNeeded())
+        if (VerifyItemsNeeded() /*&& !SameItemNamesVerify()*/)
         {
 
             foreach (var com in combinationNeedList)
@@ -69,10 +73,19 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
 
             }
             //itemManager.AddItem(combinationList[0]);
-            //StartCoroutine(ImageChange());
+            StartCoroutine(ImageChange());
             ItemManager.myInvenList.Add(combinationList[0]);
             ItemManager.itemManager.ItemRoutine();
         }
+        //else if (VerifyItemsNeeded() && SameItemNamesVerify())
+        //{
+        //    ItemManager.myWeaponList.Remove(sameID);
+        //    ItemManager.myMediList.Remove(sameID);
+        //    ItemManager.myETCList.Remove(sameID);
+        //    StartCoroutine(ImageChange());
+        //    ItemManager.myInvenList.Add(combinationList[0]);
+        //    ItemManager.itemManager.ItemRoutine();
+        //}
         else if (!VerifyItemsNeeded())
         {
             /*Do Nothing*/
@@ -96,13 +109,41 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
         return true;
     }
 
+    //public bool SameItemNamesVerify()
+    //{
+    //    duplicateId.Clear();
+
+    //    int mySameCount = 0;
+    //    sameID = 0;
+
+    //    // 같은거 체크해서 HashSet에 넣음
+    //    foreach (int id in combinationNeedList)
+    //    {
+    //        duplicateId.Add(id);
+    //        if (duplicateId.Contains(id))
+    //        {
+    //            mySameCount++;
+    //            sameID = duplicateId[id];
+    //        }
+    //    }
+
+    //    if (mySameCount > 0)
+    //    { 
+    //        return true;
+    //    }
+    //    else { return false;}
+    //}
+
+
+
     private IEnumerator ImageChange()
     {
-        //completeImages.gameObject.SetActive(true);
-        float imageShowTime = 3f;
-        ItemList.itemList.ImageMatch(combinationList[0], completeImages);
-        //completeImages.gameObject.SetActive(false);
+        yield return new WaitForNextFrameUnit();
+        completeImage.gameObject.SetActive(true);
+        float imageShowTime = 0.5976432f;
+        ItemList.itemList.ImageMatch(combinationList[0], completeImage);
         yield return new WaitForSeconds(imageShowTime);
+        completeImage.gameObject.SetActive(false);
     }
 
 
