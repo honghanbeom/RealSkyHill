@@ -70,5 +70,9 @@ TagManager:
     uniqueID: 3689794367
     locked: 0
   - name: FightUI
+<<<<<<< HEAD
+    uniqueID: 3101329647
+=======
     uniqueID: 4174514035
+>>>>>>> origin/JHW_0816
     locked: 0
