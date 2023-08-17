@@ -43,7 +43,7 @@ public class UserControl : MonoBehaviour
             {
                 targetPosition = collider.transform.position;
                 targetPosition.y -= 4.43f;
-                targetPosition.x -= 1.95f;
+                targetPosition.x -= 1.25f;
                 isMoving = true;
                 Debug.LogFormat("´­·È´Ù!");
             }
