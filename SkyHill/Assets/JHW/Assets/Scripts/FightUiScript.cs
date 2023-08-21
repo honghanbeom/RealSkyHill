@@ -11,7 +11,7 @@ public class FightUiScript : MonoBehaviour , IPointerClickHandler
     public GameObject uiImage1; // 활성화할 UI 이미지
     public GameObject uiImage2; // 활성화할 UI 이미지
 
-    public Sprite newImageSprite; // 클릭 시 변경할 이미지 스프라이트
+    public Image newImageSprite; // 클릭 시 변경할 이미지 스프라이트
     public Image image; // UI 이미지의 Image 컴포넌트
     public void Start()
     {
@@ -52,7 +52,8 @@ public class FightUiScript : MonoBehaviour , IPointerClickHandler
     {
         if (newImageSprite != null)
         {
-            image.sprite = newImageSprite; // 이미지 스프라이트 변경
+            Debug.Log("클릭이다!");
+            image = newImageSprite; // 이미지 스프라이트 변경
         }
     }
 
@@ -97,7 +98,7 @@ public class FightUiScript : MonoBehaviour , IPointerClickHandler
     {
         Vector3 uiImageScale = uiImage2.transform.localScale;
 
-        Vector3 newScale = new Vector3(1, 1, 0);
+        Vector3 newScale = new Vector3(0.7f, 0.7f, 0);
 
         uiImage2.transform.localScale = newScale;
     }

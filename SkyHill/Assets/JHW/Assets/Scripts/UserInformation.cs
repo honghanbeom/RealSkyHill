@@ -7,7 +7,7 @@ public class UserInformation : MonoBehaviour
 
     public static UserInformation player;
 
-    public float hp = 50f;
+    public float hp = 100.0f;
     public float hunger = 50.0f;
     public float minAttackDamage = 4.0f;
     public float maxAttackDamage = 10.0f;

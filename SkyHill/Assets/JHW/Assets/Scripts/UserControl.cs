@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UserControl : MonoBehaviour
 {
@@ -12,17 +13,22 @@ public class UserControl : MonoBehaviour
     public Transform userTarget;
 
     public float cameraMoving = 0.125f;
+    public float decreaseRate = 1.0f;
+    public float increaseRate = 1.0f;
+    public float maxHunger = 100.0f;
 
 
 
-    //Animation animation = null;
-    
+    public Animator animator; // Animator 컴포넌트
+
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GetComponent<Animator>(); // Animator 컴포넌트 가져오기
     }
 
     // Update is called once per frame
@@ -46,6 +52,9 @@ public class UserControl : MonoBehaviour
                 targetPosition.x -= 1.25f;
                 isMoving = true;
                 Debug.LogFormat("눌렸다!");
+
+                DecreaseHp();
+                Debug.LogFormat("배고픔 {0}", UserInformation.player.hunger);
             }
 
         }
@@ -55,15 +64,31 @@ public class UserControl : MonoBehaviour
         {
             // 플레이어를 클릭한 위치로 부드럽게 이동
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 5f);
+            animator.SetBool("userWalking", true); // "IsRunning" 파라미터를 true로 설정하여 "Run" 애니메이션 작동
 
             // 도착했을 때 이동 멈추기
             if (transform.position == targetPosition)
             {
                 isMoving = false;
+                animator.SetBool("userWalking", false); // "IsRunning" 파라미터를 false로 설정하여 "Run" 애니메이션 중지
             }
         }
 
 
+    }
+
+    public void DecreaseHp()
+    {
+        UserInformation.player.hunger -= 1;
+        UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
+        //UpdateUI(UserInformation.player.hunger);
+    }
+
+    public void IncreaseHp()
+    {
+        UserInformation.player.hunger += 1;
+        UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
+        //UpdateUI(UserInformation.player.hunger);
     }
 
 
