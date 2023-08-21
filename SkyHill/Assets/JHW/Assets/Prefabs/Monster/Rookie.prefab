@@ -1389,7 +1389,7 @@ MonoBehaviour:
   uiImage: {fileID: 0}
   uiImage1: {fileID: 0}
   uiImage2: {fileID: 0}
-  newImageSprite: {fileID: 0}
+  newImageSprite: {fileID: 3704428106786214617, guid: a3b7d128546ea57438c26174eeeb1c64, type: 3}
   image: {fileID: 5983944706193479787, guid: 588d88cf466edde42ab226590e2c1510, type: 3}
 --- !u!61 &3235494731331756705
 BoxCollider2D:

@@ -368,6 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff5554fe63403f40a7a069ad39256aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiImage: {fileID: 5983944706193479787, guid: 588d88cf466edde42ab226590e2c1510, type: 3}
-  uiImage1: {fileID: 5641806420841974587, guid: 858b151cbdacec6418d1671df643e006, type: 3}
-  uiImage2: {fileID: 962566891151860870, guid: cb37289848ec4ea4398c2a6cfaa279da, type: 3}
+  uiImage: {fileID: 0}
+  uiImage1: {fileID: 0}
+  uiImage2: {fileID: 0}
+  newImageSprite: {fileID: 3704428106786214617, guid: a3b7d128546ea57438c26174eeeb1c64, type: 3}
+  image: {fileID: 5983944706193479787, guid: 588d88cf466edde42ab226590e2c1510, type: 3}
