@@ -60,7 +60,6 @@ public class CreaftContent : MonoBehaviour
         }
 
         Position();
-
     }
 
 
@@ -194,10 +193,4 @@ public class CreaftContent : MonoBehaviour
     //    }
     //}
     #endregion
-
-
-    void Update()
-    {
- 
-    }
 }

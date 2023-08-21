@@ -17,14 +17,12 @@ public class ItemList : MonoBehaviour
     public Sprite[] rootFoodSprites;
     public Sprite[] makingFoodSprites;
     public Sprite[] vipSprites;
+    public Sprite[] rootEmergencySprites;
 
     private void Awake()
     {
         itemList = this;
     }
-
-
-
     public void ImageMatch(int id, Image image)
     {
         List<Dictionary<string, object>> rootFood = CSVReader.Read("ROOTFOOD");
@@ -36,10 +34,16 @@ public class ItemList : MonoBehaviour
         List<Dictionary<string, object>> makingFood = CSVReader.Read("MAKINGFOOD");
         List<Dictionary<string, object>> makingMaterial = CSVReader.Read("MAKINGMATERIAL");
         List<Dictionary<string, object>> makingWeapon = CSVReader.Read("MAKINGWEAPON");
+        List<Dictionary<string, object>> rootEmergency = CSVReader.Read("ROOTEMERGENCY");
 
-
-        // (100 ~ 108) EMERGENCY 
-        if (id >= 100 && id <= 108)
+        // (0 ~ 3) ROOTEMERGENCY
+        if (id >= 0 && id <= 3)
+        {
+            int index = id;
+            image.sprite = rootEmergencySprites[index];
+        }
+        // (100 ~ 104) EMERGENCY 
+        if (id >= 100 && id <= 104)
         {
             int index = id - 100;
             image.sprite = emergencySprites[index];

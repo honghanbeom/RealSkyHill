@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IhPItem
+public interface IHPItem
 {
     // 체력 아이템
     public void UseHealthItem(int itemId);

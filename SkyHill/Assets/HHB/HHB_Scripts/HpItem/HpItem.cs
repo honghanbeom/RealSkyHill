@@ -2,25 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpItem : MonoBehaviour, IhPItem
+public class HpItem : MonoBehaviour, IHPItem
 {
     // HEALTH
     public void UseHealthItem(int itemId)
     {
         //EMERGENCY
-        List<Dictionary<string, object>> emergency = CSVReader.Read("EMERGENCY");
-        float healHP = (float)((int)emergency[itemId - 100]["HP"]);
+        if (itemId >= 100 && itemId <= 104)
+        {
+            List<Dictionary<string, object>> emergency = CSVReader.Read("EMERGENCY");
+            float healHP = (float)((int)emergency[itemId - 100]["HP"]);
 
-        if (UserInformation.player.hp + healHP>= 100f)
-        {
-            UserInformation.player.hp = 100f;
+            if (UserInformation.player.hp + healHP >= 100f)
+            {
+                UserInformation.player.hp = 100f;
+            }
+            else if (UserInformation.player.hp + healHP < 100f)
+            {
+                UserInformation.player.hp += healHP;
+            }
+            ItemManager.myMediList.Remove(itemId);
+            ItemManager.itemManager.ItemRoutine();
         }
-        else if(UserInformation.player.hp + healHP < 100f)
+        //ROOTEMERGENCY
+        if (itemId >= 0 && itemId <= 3)
         {
-            UserInformation.player.hp += healHP;
+            List<Dictionary<string, object>> rootEmergency = CSVReader.Read("ROOTEMERGENCY");
+            float healHP = (float)((int)rootEmergency[itemId - 100]["HP"]);
+
+            if (UserInformation.player.hp + healHP >= 100f)
+            {
+                UserInformation.player.hp = 100f;
+            }
+            else if (UserInformation.player.hp + healHP < 100f)
+            {
+                UserInformation.player.hp += healHP;
+            }
+            ItemManager.myMediList.Remove(itemId);
+            ItemManager.itemManager.ItemRoutine();
         }
-        ItemManager.myMediList.Remove(itemId);
-        ItemManager.itemManager.ItemRoutine();
     }
 
     // FOOD
@@ -46,9 +66,6 @@ public class HpItem : MonoBehaviour, IhPItem
             List<Dictionary<string, object>> makingFood = CSVReader.Read("MAKINGFOOD");
             hungry = (float)((int)makingFood[itemId - 1000]["HP"]);
         }
-
-
-
         // 배고픔 추가 로직
         if (UserInformation.player.hunger + hungry >= 100f)
         {
@@ -60,8 +77,6 @@ public class HpItem : MonoBehaviour, IhPItem
         }
         ItemManager.myMediList.Remove(itemId);
         ItemManager.itemManager.ItemRoutine();
-
-
     }
 
     // SPOILED

@@ -17,7 +17,7 @@ public class MediCreaft : CreaftContent
             originalColors[i] = combinationImage[i].color;
         }
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 5; i++)
         {
             GameObject buttonObj = Instantiate(prefab, rectTransform);
             Button button = buttonObj.GetComponent<Button>();
@@ -49,6 +49,13 @@ public class MediCreaft : CreaftContent
         Dictionary<string, object> itemInfo = emergency[buttonIndex];
 
 
+        //Debug.Log(emergency[buttonIndex]["COM1"].ToString());
+        //Debug.Log(emergency[buttonIndex]["COM2"].ToString());
+        //Debug.Log(emergency[buttonIndex]["COM3"].ToString());
+        //Debug.Log(emergency[buttonIndex]["COM4"].ToString());
+
+
+
         int com1 = NameToIDChanger.n2D.NameToID(emergency[buttonIndex]["COM1"].ToString());
         int com2 = NameToIDChanger.n2D.NameToID(emergency[buttonIndex]["COM2"].ToString());
         int com3 = NameToIDChanger.n2D.NameToID(emergency[buttonIndex]["COM3"].ToString());
@@ -65,7 +72,7 @@ public class MediCreaft : CreaftContent
         CombinationCreateButton.combinationList.Clear();
         CombinationCreateButton.combinationNeedList.Clear();
 
-        for (int i = 1; i <= 9; i++)
+        for (int i = 1; i <= 4; i++)
         {
             foreach (Image image in combinationImage)
             {

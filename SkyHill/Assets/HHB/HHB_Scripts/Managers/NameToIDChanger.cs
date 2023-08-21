@@ -21,6 +21,7 @@ public class NameToIDChanger : MonoBehaviour
         List<Dictionary<string, object>> makingFood = CSVReader.Read("MAKINGFOOD");
         List<Dictionary<string, object>> vipRoom = CSVReader.Read("VIPROOM");
         List<Dictionary<string, object>> rootFood = CSVReader.Read("ROOTFOOD");
+        List<Dictionary<string, object>> rootEmergency = CSVReader.Read("ROOTEMERGENCY");
 
 
 
@@ -58,6 +59,10 @@ public class NameToIDChanger : MonoBehaviour
         if (id == -1)
         {
             id = FindIDByName(rootFood, "FOOD_NAME", Name);
+        }
+        if (id == -1)
+        {
+            id = FindIDByName(rootEmergency, "ROOT_EMERGENCY", Name);
         }
 
         return id;

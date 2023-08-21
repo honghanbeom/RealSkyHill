@@ -59,23 +59,35 @@ public class ItemManager : MonoBehaviour
         //myInvenList.Add(406);
         //myInvenList.Add(306);
         // 15개 12개 나오는중
-        myInvenList.Add(406);
+        //myInvenList.Add(406);
         myInvenList.Add(306);
-        myInvenList.Add(600);
-        myInvenList.Add(601);
-        myInvenList.Add(602);
-        myInvenList.Add(100);
-        myInvenList.Add(101);
-        myInvenList.Add(504);
-        myInvenList.Add(504);
-        myInvenList.Add(801);
-        myInvenList.Add(1000);
-        myInvenList.Add(1001);
-        myInvenList.Add(1002);
-        myInvenList.Add(915);
-        myInvenList.Add(705);
-        myInvenList.Add(901);
-        myInvenList.Add(905);
+        //myInvenList.Add(404);
+        //myInvenList.Add(305);
+        //myInvenList.Add(302);
+        //myInvenList.Add(600);
+        //myInvenList.Add(601);
+        //myInvenList.Add(602);
+        //myInvenList.Add(100);
+        //myInvenList.Add(101);
+        //myInvenList.Add(504);
+        //myInvenList.Add(504);
+        //myInvenList.Add(801);
+        //myInvenList.Add(1000);
+        //myInvenList.Add(1001);
+        //myInvenList.Add(1002);
+        //myInvenList.Add(915);
+        //myInvenList.Add(705);
+        //myInvenList.Add(901);
+        //myInvenList.Add(905);
+
+        //for (int i = 301; i < 325; i++)
+        //{
+        //    myInvenList.Add(i);
+        //}
+        for (int i = 400; i < 407; i++)
+        {
+            myInvenList.Add(i);
+        }
         ItemRoutine();
 
     }
@@ -125,8 +137,13 @@ public class ItemManager : MonoBehaviour
     //{ Categorize()
     public void Categorize(int id)
     {
-        // (100 ~ 108) EMERGENCY => 의학 리스트에 추가
-        if (id >= 100 && id <= 108)
+        // (0 ~ 3) ROOTEMERGENCY => 의학 리스트에 추가
+        if (id >= 0 && id <= 3)
+        {
+            myMediList.Add(id);
+        }
+        // (100 ~ 104) EMERGENCY => 의학 리스트에 추가
+        if (id >= 100 && id <= 104)
         {
             myMediList.Add(id);
         }

@@ -15,6 +15,7 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
     public static List<int> combinationNeedList = new List<int>();
     public Image[] combinationImages;
     public Image completeImage;
+    private WeaponImage weaponImage;
 
     //List<int> duplicateId = new List<int>();
     //int sameID = default;
@@ -58,6 +59,17 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
                 ItemManager.myMediList.Remove(com);
                 ItemManager.myETCList.Remove(com);
 
+                // 무기아이템의 경우 내가 아이템에서 빼면 들고 있는 무기 리스트에서 같이 제거 해줌
+                for (int i = 0; i < WeaponItem.myEquipWeapon.Count; i++)
+                {
+                    if (WeaponItem.myEquipWeapon[i] == com)
+                    {
+                        WeaponItem.myEquipWeapon[i] = -1;
+                    }
+                }
+                weaponImage = FindObjectOfType<WeaponImage>();
+                weaponImage.ControlLeftImage(WeaponItem.myEquipWeapon);
+                weaponImage.ControlRightImage(WeaponItem.myEquipWeapon);
                 //for (int i = 0; i < ItemManager.myWeaponList.Count; i++)
                 //{
                 //    Debug.Log(ItemManager.myWeaponList[i]);
