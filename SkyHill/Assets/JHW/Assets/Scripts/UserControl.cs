@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UserControl : MonoBehaviour
 {
@@ -37,29 +38,44 @@ public class UserControl : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            // 마우스 클릭 위치를 월드 좌표로 변환
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;
-
-            // 마우스 클릭한 위치에 해당하는 오브젝트 찾기
-            Collider2D collider = Physics2D.OverlapPoint(mousePosition);
-            Debug.LogFormat("도대체 뭘 누른거지?? name: {0}, tag: {1}", collider.gameObject.name, collider.gameObject.tag);
-
-            if (collider != null && collider.CompareTag("PlayerMoving"))
+            if (EventSystem.current.IsPointerOverGameObject())
             {
-                targetPosition = collider.transform.position;
-                targetPosition.y -= 4.43f;
-                targetPosition.x -= 1.25f;
-                isMoving = true;
-                Debug.LogFormat("눌렸다!");
-
-                DecreaseHp();
-                Debug.LogFormat("배고픔 {0}", UserInformation.player.hunger);
+                // UI 오브젝트 위에 있는 경우에 실행할 코드 작성
+                Debug.Log("마우스 클릭! UI 위에 있음");
             }
+            else
+            {
+                // UI 오브젝트 위에 없는 경우에 실행할 코드 작성
+                Debug.Log("마우스 클릭! UI 위에 없음");
 
+
+                // 마우스 클릭 위치를 월드 좌표로 변환
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition.z = 0;
+
+                // 마우스 클릭한 위치에 해당하는 오브젝트 찾기
+                Collider2D collider = Physics2D.OverlapPoint(mousePosition);
+                Debug.LogFormat("도대체 뭘 누른거지?? name: {0}, tag: {1}", collider.gameObject.name, collider.gameObject.tag);
+
+                if (collider != null && collider.CompareTag("PlayerMoving"))
+                {
+                    targetPosition = collider.transform.position;
+                    targetPosition.y -= 4.43f;
+                    targetPosition.x -= 1.25f;
+                    isMoving = true;
+                    Debug.LogFormat("눌렸다!");
+
+                    DecreaseHp();
+                    Debug.LogFormat("배고픔 {0}", UserInformation.player.hunger);
+                }
+
+            }
         }
 
-        
+
+
+
+
         if (isMoving)
         {
             // 플레이어를 클릭한 위치로 부드럽게 이동

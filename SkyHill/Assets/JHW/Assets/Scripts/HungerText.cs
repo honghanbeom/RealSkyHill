@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HungerText : MonoBehaviour
 {
     public Text hungerText; // 체력 값을 표시할 UI Text 컴포넌트
+    public Image hungerFillImage; // 체력을 나타내는 UI Image 컴포넌트
+
 
     public float maxHunger = 100.0f;
     public float decreaseRate = 1.0f;
@@ -24,10 +26,12 @@ public class HungerText : MonoBehaviour
     void UpdateUI(float hungerValue)
     {
         float fillAmount = hungerValue / maxHunger;
-        //hpFillImage.fillAmount = fillAmount;
+        hungerFillImage.fillAmount = fillAmount;
 
         hungerText.text = "HUNGER: " + hungerValue.ToString("0") + " / " + maxHunger.ToString("0");
     }
+
+
 
     public void DecreaseHp()
     {
