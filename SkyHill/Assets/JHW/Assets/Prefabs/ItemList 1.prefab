@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3671570456874526005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3671570456874526003}
+  - component: {fileID: 3671570456874526000}
+  - component: {fileID: 3671570456874526002}
+  m_Layer: 0
+  m_Name: ItemList 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3671570456874526003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3671570456874526005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8349951, y: 0.058143012, z: -0.065003596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3671570456874526000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3671570456874526005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baf1fae1927e8c4dac2db2af43a301e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3671570456874526002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3671570456874526005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a8af179852e12347a2ee354aad0175b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emergencySprites:
+  - {fileID: -509989523, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1979742336, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1141778590, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1420840550, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 2012448835, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  makingWeaponSprites:
+  - {fileID: 121527806, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1869946179, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1332617667, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 297428014, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -793947260, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -129929680, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1129144758, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1402669035, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -418724513, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 747046306, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 407939418, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -856056205, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -757964949, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1522766928, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1061284024, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 937903717, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 230513056, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 115555211, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1084002856, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 285294353, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 140821854, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -505486279, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1773987060, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -924056406, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  rootWeaponSprites:
+  - {fileID: -771393442, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1185783546, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1476362276, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1061376274, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -343410641, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1386789505, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1530966119, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  makingMaterialSprites:
+  - {fileID: 541449866, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -783604991, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1605605826, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 699082451, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1364592907, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1262679523, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -250010879, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -807938873, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1917797975, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1622870020, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -629194668, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -562224920, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  rootMaterialSprites:
+  - {fileID: 835290508, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 307649830, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1935528036, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -2093549695, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1741774651, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 829214588, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  freshFoodSprites:
+  - {fileID: 1290144782, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -835108275, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -2031517098, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1347240343, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1127575495, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1556558642, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1629714541, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -408731647, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -2083329705, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 2000914102, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1609641942, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 955643854, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -624300924, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1129901952, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  spoiledFoodSprites:
+  - {fileID: -1241656628, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1407662418, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1250657434, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1263141741, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 16196152, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1091752864, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1258983570, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1719027173, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 2039506379, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  rootFoodSprites:
+  - {fileID: 1319799890, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -676390392, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1654980129, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 616134257, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -225180394, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1539736425, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1305408525, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1784762918, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -194287609, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1650174854, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -335577438, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 2134390318, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 64328864, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1859015238, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1159366416, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 497775632, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1501872839, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1493939765, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  makingFoodSprites:
+  - {fileID: -408161829, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1531896793, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 374201611, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -7234867, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 615702160, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1203260158, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1945386546, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1564032581, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1201894025, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 597189324, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 983894346, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1847090398, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 2091818283, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1899930695, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -364599229, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 392358153, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -426616035, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  vipSprites:
+  - {fileID: -2060625022, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 910346375, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -2072052696, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 326139046, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  rootEmergencySprites:
+  - {fileID: 1663245847, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1213065460, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: 1427795624, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
+  - {fileID: -1599131877, guid: 7a189fd89068d034bba31cfdaca3cd7d, type: 3}
