@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 76236583464193433, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
       propertyPath: m_Name
-      value: Neighbour
+      value: Neighbour 1
       objectReference: {fileID: 0}
     - target: {fileID: 76236583464193433, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
       propertyPath: m_IsActive
@@ -70,6 +70,10 @@ PrefabInstance:
     - target: {fileID: 1280923418913314298, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280923418913314298, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1280923418913314298, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -314,7 +318,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 76236583464193433, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
   m_PrefabInstance: {fileID: 3121636721109475299}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &8779347478851593200
+--- !u!61 &6515402296833791349
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -352,20 +356,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04b71c13189472f45872879d17ad059c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1904944379928930644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052473852422410874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff5554fe63403f40a7a069ad39256aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiImage: {fileID: 0}
-  uiImage1: {fileID: 0}
-  uiImage2: {fileID: 0}
-  newImageSprite: {fileID: 3704428106786214617, guid: a3b7d128546ea57438c26174eeeb1c64, type: 3}
-  image: {fileID: 5983944706193479787, guid: 588d88cf466edde42ab226590e2c1510, type: 3}

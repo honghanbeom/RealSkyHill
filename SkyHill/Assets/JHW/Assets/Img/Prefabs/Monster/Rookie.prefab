@@ -1301,10 +1301,9 @@ GameObject:
   - component: {fileID: 2507986588537612010}
   - component: {fileID: 3503671615121438474}
   - component: {fileID: 1414054842991367106}
-  - component: {fileID: -2340437213376691398}
-  - component: {fileID: 3939892781420787959}
+  - component: {fileID: 3235494731331756705}
   m_Layer: 0
-  m_Name: Rookie 1
+  m_Name: Rookie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1319,7 +1318,7 @@ Transform:
   m_GameObject: {fileID: 4006000860370747471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6533563659824782556}
@@ -1374,7 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8562e6c6519bf5d4d913019a55f7ac43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &-2340437213376691398
+--- !u!61 &3235494731331756705
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1400,23 +1399,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5, y: 2}
   m_EdgeRadius: 0
---- !u!114 &3939892781420787959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4006000860370747471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff5554fe63403f40a7a069ad39256aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiImage: {fileID: 0}
-  uiImage1: {fileID: 0}
-  uiImage2: {fileID: 0}
-  newImageSprite: {fileID: 3704428106786214617, guid: a3b7d128546ea57438c26174eeeb1c64, type: 3}
-  image: {fileID: 5983944706193479787, guid: 588d88cf466edde42ab226590e2c1510, type: 3}
 --- !u!1 &4172483910143112880
 GameObject:
   m_ObjectHideFlags: 0

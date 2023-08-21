@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MosterSpawn : MonoBehaviour
 {
-    public GameObject uiImage; // 활성화할 UI 이미지
-    public GameObject uiImage1; // 활성화할 UI 이미지
-    public GameObject uiImage2; // 활성화할 UI 이미지
+    //public GameObject uiImage; // 활성화할 UI 이미지
+    //public GameObject uiImage1; // 활성화할 UI 이미지
+    //public GameObject uiImage2; // 활성화할 UI 이미지
 
     public GameObject rookiePreafab_R;
     public GameObject neighbourPreafab_R;
@@ -42,21 +42,6 @@ public class MosterSpawn : MonoBehaviour
         //ImageSc1();
         //ImageSc2();
 
-
-
-
-
-
-
-
-        //uiImage.SetActive(false);
-        //uiImage1.SetActive(false);
-        //uiImage2.SetActive(false);
-        //rookiePreafab_L = rookiePreafab;
-        //rookiePreafab_L.transform.localScale = new Vector3(-rookiePreafab_L.transform.localScale.x, rookiePreafab_L.transform.localScale.y, rookiePreafab_L.transform.localScale.z);
-
-        //rookiePreafab_R = rookiePreafab;
-
     }
 
 
@@ -69,7 +54,7 @@ public class MosterSpawn : MonoBehaviour
         for (int x = 0; x < monsterCount.x; x++)
         {
 
-            for (int y = 0; y < monsterCount.y; y++)
+            for (int y = 1; y < monsterCount.y; y++)
             {
                 int randomIndex = Random.Range(0, 2); // 랜덤 인덱스 선택
                 int randomSpawn = Random.Range(0, 10);
@@ -95,6 +80,7 @@ public class MosterSpawn : MonoBehaviour
                     }
                     else if (randomIndex == 1)
                     {
+
                         //NeighbourPrefabFlip();
                         Instantiate(neighbourPreafab_L, neighbourSpwanPoint, Quaternion.identity);
                         //NeighbourPrefabFlip();
@@ -121,7 +107,7 @@ public class MosterSpawn : MonoBehaviour
         for (int x = 0; x < monsterCount.x; x++)
         {
 
-            for (int y = 0; y < monsterCount.y; y++)
+            for (int y = 1; y < monsterCount.y; y++)
             {
                 int randomIndex = Random.Range(0, 2); // 랜덤 인덱스 선택
                 int randomRL = Random.Range(0, 2); // 랜덤 인덱스 선택
@@ -179,6 +165,7 @@ public class MosterSpawn : MonoBehaviour
                         }
                         else if (randomRL == 1)
                         {
+
                             Vector3 rightMonsterSpwaner = rookieSpwanPoint + Vector3.right * spacingRight;
                             Instantiate(rookiePreafab_L, rightMonsterSpwaner, Quaternion.identity);
 
@@ -194,6 +181,7 @@ public class MosterSpawn : MonoBehaviour
                     {
                         if (randomRL == 0)
                         {
+
                             Vector3 rightMonsterSpwaner1 = rightNeighbourSpwanPoint + Vector3.right * spacingRight;
                             Instantiate(neighbourPreafab_L, rightMonsterSpwaner1, Quaternion.identity);
 
@@ -202,6 +190,7 @@ public class MosterSpawn : MonoBehaviour
                         }
                         else if (randomRL == 1)
                         {
+
 
                             Vector3 rightMonsterSpwaner1 = rightNeighbourSpwanPoint + Vector3.right * spacingRight;
                             Instantiate(neighbourPreafab_L, rightMonsterSpwaner1, Quaternion.identity);

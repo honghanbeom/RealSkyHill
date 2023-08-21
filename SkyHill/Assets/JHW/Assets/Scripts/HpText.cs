@@ -17,6 +17,11 @@ public class HpText : MonoBehaviour
         UpdateUI(UserInformation.player.hp);
     }
 
+
+    private void Update()
+    {
+        UpdateUI(UserInformation.player.hp);
+    }
     void UpdateUI(float hpValue)
     {
         float fillAmount = hpValue / maxHp;
@@ -24,6 +29,8 @@ public class HpText : MonoBehaviour
 
         hpText.text = "HP: " + hpValue.ToString("0") + " / " + maxHp.ToString("0");
     }
+
+    
 
     public void DecreaseHp()
     {
