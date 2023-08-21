@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HpText : MonoBehaviour
 {
-    //public Image hpFillImage; // 체력을 나타내는 UI Image 컴포넌트
+    public Image hpFillImage; // 체력을 나타내는 UI Image 컴포넌트
     public Text hpText; // 체력 값을 표시할 UI Text 컴포넌트
 
     public float maxHp = 100.0f;
@@ -20,7 +20,7 @@ public class HpText : MonoBehaviour
     void UpdateUI(float hpValue)
     {
         float fillAmount = hpValue / maxHp;
-        //hpFillImage.fillAmount = fillAmount;
+        hpFillImage.fillAmount = fillAmount;
 
         hpText.text = "HP: " + hpValue.ToString("0") + " / " + maxHp.ToString("0");
     }
