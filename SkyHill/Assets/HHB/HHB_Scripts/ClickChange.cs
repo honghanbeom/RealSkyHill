@@ -38,6 +38,8 @@ public class ClickChange : MonoBehaviour
         
         int randomIndex = Random.Range(0, DropItem.dropItemData.Count);
 
+        Debug.Log(randomIndex);
+
         ItemManager.myInvenList.Add(randomIndex);
         ItemManager.itemManager.ItemRoutine();
     }

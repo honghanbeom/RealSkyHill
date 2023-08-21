@@ -59,22 +59,22 @@ public class ItemManager : MonoBehaviour
         //myInvenList.Add(406);
         //myInvenList.Add(306);
         // 15개 12개 나오는중
-        //myInvenList.Add(406);
+        myInvenList.Add(406);
         myInvenList.Add(306);
         //myInvenList.Add(404);
         //myInvenList.Add(305);
         //myInvenList.Add(302);
         //myInvenList.Add(600);
-        //myInvenList.Add(601);
-        //myInvenList.Add(602);
-        //myInvenList.Add(100);
-        //myInvenList.Add(101);
-        //myInvenList.Add(504);
-        //myInvenList.Add(504);
+        myInvenList.Add(601);
+        myInvenList.Add(602);
+        myInvenList.Add(100);
+        myInvenList.Add(101);
+        myInvenList.Add(504);
+        myInvenList.Add(504);
         //myInvenList.Add(801);
-        //myInvenList.Add(1000);
-        //myInvenList.Add(1001);
-        //myInvenList.Add(1002);
+        myInvenList.Add(1000);
+        myInvenList.Add(1001);
+        myInvenList.Add(1002);
         //myInvenList.Add(915);
         //myInvenList.Add(705);
         //myInvenList.Add(901);
@@ -84,10 +84,10 @@ public class ItemManager : MonoBehaviour
         //{
         //    myInvenList.Add(i);
         //}
-        for (int i = 400; i < 407; i++)
-        {
-            myInvenList.Add(i);
-        }
+        //for (int i = 400; i < 407; i++)
+        //{
+        //    myInvenList.Add(i);
+        //}
         ItemRoutine();
 
     }

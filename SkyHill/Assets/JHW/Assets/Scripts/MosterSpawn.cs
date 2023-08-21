@@ -34,13 +34,13 @@ public class MosterSpawn : MonoBehaviour
     {
         ReferenceMonster();
         SpawnRandomPrefab();
-        uiImage = GameObject.Find("LeftHand");
-        uiImage1 = GameObject.Find("RightHand");
-        uiImage2 = GameObject.Find("AttackType");
+        //uiImage = GameObject.Find("LeftHand");
+        //uiImage1 = GameObject.Find("RightHand");
+        //uiImage2 = GameObject.Find("AttackType");
 
-        ImageSc();
-        ImageSc1();
-        ImageSc2();
+        //ImageSc();
+        //ImageSc1();
+        //ImageSc2();
 
 
 
@@ -246,32 +246,32 @@ public class MosterSpawn : MonoBehaviour
 
 
     //}
-    public void ImageSc()
-    {
-        Vector3 uiImageScale = uiImage.transform.localScale;
+    //public void ImageSc()
+    //{
+    //    Vector3 uiImageScale = uiImage.transform.localScale;
 
-        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
+    //    Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
 
-        uiImage.transform.localScale = newScale;
-    }
+    //    uiImage.transform.localScale = newScale;
+    //}
 
-    public void ImageSc1()
-    {
-        Vector3 uiImageScale = uiImage1.transform.localScale;
+    //public void ImageSc1()
+    //{
+    //    Vector3 uiImageScale = uiImage1.transform.localScale;
 
-        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
+    //    Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
 
-        uiImage1.transform.localScale = newScale;
-    }
+    //    uiImage1.transform.localScale = newScale;
+    //}
 
-    public void ImageSc2()
-    {
-        Vector3 uiImageScale = uiImage2.transform.localScale;
+    //public void ImageSc2()
+    //{
+    //    Vector3 uiImageScale = uiImage2.transform.localScale;
 
-        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
+    //    Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
 
-        uiImage2.transform.localScale = newScale;
-    }
+    //    uiImage2.transform.localScale = newScale;
+    //}
 
 }
 
