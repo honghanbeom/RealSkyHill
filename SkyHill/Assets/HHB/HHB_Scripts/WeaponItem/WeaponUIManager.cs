@@ -12,10 +12,10 @@ public class WeaponUIManager : MonoBehaviour
     public Text rightPlusStatText;
 
 
+
     private void Awake()
     {
         weaponUI = this;
-
     }
 
 
@@ -29,14 +29,18 @@ public class WeaponUIManager : MonoBehaviour
 
 
         // WeaponItem.myEquipWeapon[0]
-        if (WeaponItem.myEquipWeapon[0] >= 400 && WeaponItem.myEquipWeapon[0] <= 406)
+        if (UserInformation.player.myEquipWeapon[0] >= 400 && 
+            UserInformation.player.myEquipWeapon[0] <= 406)
         {
-            leftWeaponName = rootWeapon[WeaponItem.myEquipWeapon[0] - 400]["WEAPON_NAME"].ToString();
+            leftWeaponName = rootWeapon
+                [UserInformation.player.myEquipWeapon[0] - 400]["WEAPON_NAME"].ToString();
 
         }
-        else if (WeaponItem.myEquipWeapon[0] >= 301 && WeaponItem.myEquipWeapon[0] <= 324)
+        else if (UserInformation.player.myEquipWeapon[0] >= 301 &&
+            UserInformation.player.myEquipWeapon[0] <= 324)
         {
-            leftWeaponName = makingWeapon[WeaponItem.myEquipWeapon[0] - 301]["WEAPON_NAME"].ToString();
+            leftWeaponName = makingWeapon
+                [UserInformation.player.myEquipWeapon[0] - 301]["WEAPON_NAME"].ToString();
         }
         else
         {
@@ -46,13 +50,17 @@ public class WeaponUIManager : MonoBehaviour
         leftWeaponInfoText.text = leftWeaponName;
 
         // WeaponItem.myEquipWeapon[1]
-        if (WeaponItem.myEquipWeapon[1] >= 400 && WeaponItem.myEquipWeapon[1] <= 406)
+        if (UserInformation.player.myEquipWeapon[1] >= 400 
+            && UserInformation.player.myEquipWeapon[1] <= 406)
         {
-            rightWeaponName = rootWeapon[WeaponItem.myEquipWeapon[0] - 400]["WEAPON_NAME"].ToString();
+            rightWeaponName = rootWeapon
+                [UserInformation.player.myEquipWeapon[1] - 400]["WEAPON_NAME"].ToString();
         }
-        else if (WeaponItem.myEquipWeapon[1] >= 301 && WeaponItem.myEquipWeapon[1] <= 324)
+        else if (UserInformation.player.myEquipWeapon[1] >= 301 
+            && UserInformation.player.myEquipWeapon[1] <= 324)
         {
-            rightWeaponName = makingWeapon[WeaponItem.myEquipWeapon[0] - 301]["WEAPON_NAME"].ToString();
+            rightWeaponName = makingWeapon
+                [UserInformation.player.myEquipWeapon[1] - 301]["WEAPON_NAME"].ToString();
         }
         else
         {
@@ -66,7 +74,8 @@ public class WeaponUIManager : MonoBehaviour
     {
 
         // WeaponItem.myEquipWeapon[0]
-        if (WeaponItem.myEquipWeapon[0] >= 400 && WeaponItem.myEquipWeapon[0] <= 406)
+        if (UserInformation.player.myEquipWeapon[0] >= 400 
+            && UserInformation.player.myEquipWeapon[0] <= 406)
         {
             float max = UserInformation.player.maxAttackDamage;
             float min = UserInformation.player.minAttackDamage;
@@ -74,7 +83,8 @@ public class WeaponUIManager : MonoBehaviour
 
             leftPlusStatText.text = "데미지 : " + min.ToString() + " - " + max.ToString();
         }
-        else if (WeaponItem.myEquipWeapon[0] >= 301 && WeaponItem.myEquipWeapon[0] <= 324)
+        else if (UserInformation.player.myEquipWeapon[0] >= 301 
+            && UserInformation.player.myEquipWeapon[0] <= 324)
         {
             float max = UserInformation.player.maxAttackDamage;
             float min = UserInformation.player.minAttackDamage;
@@ -84,13 +94,15 @@ public class WeaponUIManager : MonoBehaviour
         }
         else
         {
-            leftPlusStatText.text = "데미지 : NONE";
-            
+            rightPlusStatText.text = "데미지 : " + UserInformation.player.lastStats[1]
+                + " - " + UserInformation.player.lastStats[2];
+
         }
 
-
+                
         // WeaponItem.myEquipWeapon[1]
-        if (WeaponItem.myEquipWeapon[1] >= 400 && WeaponItem.myEquipWeapon[1] <= 406)
+        if (UserInformation.player.myEquipWeapon[1] >= 400 
+            && UserInformation.player.myEquipWeapon[1] <= 406)
         {
 
             float max = UserInformation.player.maxAttackDamage;
@@ -98,7 +110,8 @@ public class WeaponUIManager : MonoBehaviour
 
             rightPlusStatText.text = "데미지 : " + min.ToString() + " - " + max.ToString();
         }
-        else if (WeaponItem.myEquipWeapon[1] >= 301 && WeaponItem.myEquipWeapon[1] <= 324)
+        else if (UserInformation.player.myEquipWeapon[1] >= 301 
+            && UserInformation.player.myEquipWeapon[1] <= 324)
         {
 ;
             float max = UserInformation.player.maxAttackDamage;
@@ -108,7 +121,23 @@ public class WeaponUIManager : MonoBehaviour
         }
         else
         {
-            rightPlusStatText.text = "데미지 : NONE";
+            rightPlusStatText.text = "데미지 : " + UserInformation.player.lastStats[1]
+                + " - " + UserInformation.player.lastStats[2];
         }
     }
+
+    public void GreenOrRed()
+    {
+        //if (UserInformation.player.myEquipWeapon[0])
+        //{ 
+        
+        //}
+        //if (UserInformation.player.myEquipWeapon[1])
+        //{ 
+        
+        //}
+
+
+    }
+
 }

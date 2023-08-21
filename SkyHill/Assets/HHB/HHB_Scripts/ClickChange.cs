@@ -15,7 +15,7 @@ public class ClickChange : MonoBehaviour
     {
         gb = this.gameObject;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        DropItem.Initialize();
+        //DropItem.dropItem.Initialize();
     }
 
     // Update is called once per frame
@@ -36,11 +36,8 @@ public class ClickChange : MonoBehaviour
             }
         }
         
-        int randomIndex = Random.Range(0, DropItem.dropItemData.Count);
-
-        Debug.Log(randomIndex);
-
-        ItemManager.myInvenList.Add(randomIndex);
+        int randomIndex = Random.Range(0, DropItem.dropItem.dropItemData.Count);
+        ItemManager.myInvenList.Add(DropItem.dropItem.dropItemData[randomIndex]);
         ItemManager.itemManager.ItemRoutine();
     }
 }

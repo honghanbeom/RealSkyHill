@@ -60,16 +60,16 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
                 ItemManager.myETCList.Remove(com);
 
                 // 무기아이템의 경우 내가 아이템에서 빼면 들고 있는 무기 리스트에서 같이 제거 해줌
-                for (int i = 0; i < WeaponItem.myEquipWeapon.Count; i++)
+                for (int i = 0; i < UserInformation.player.myEquipWeapon.Count; i++)
                 {
-                    if (WeaponItem.myEquipWeapon[i] == com)
+                    if (UserInformation.player.myEquipWeapon[i] == com)
                     {
-                        WeaponItem.myEquipWeapon[i] = -1;
+                        UserInformation.player.myEquipWeapon[i] = -1;
                     }
                 }
                 weaponImage = FindObjectOfType<WeaponImage>();
-                weaponImage.ControlLeftImage(WeaponItem.myEquipWeapon);
-                weaponImage.ControlRightImage(WeaponItem.myEquipWeapon);
+                weaponImage.ControlLeftImage(UserInformation.player.myEquipWeapon);
+                weaponImage.ControlRightImage(UserInformation.player.myEquipWeapon);
                 //for (int i = 0; i < ItemManager.myWeaponList.Count; i++)
                 //{
                 //    Debug.Log(ItemManager.myWeaponList[i]);
@@ -152,7 +152,7 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
     {
         yield return new WaitForNextFrameUnit();
         completeImage.gameObject.SetActive(true);
-        float imageShowTime = 0.5976432f;
+        float imageShowTime = 0.6f;
         ItemList.itemList.ImageMatch(combinationList[0], completeImage);
         yield return new WaitForSeconds(imageShowTime);
         completeImage.gameObject.SetActive(false);
