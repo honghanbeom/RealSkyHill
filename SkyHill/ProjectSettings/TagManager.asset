@@ -8,6 +8,11 @@ TagManager:
   - Clickable
   - PlayerMoving
   - Enemy
+  - Attack
+  - Rookie
+  - Neighbour
+  - Hungry
+  - Door
   layers:
   - Default
   - TransparentFX

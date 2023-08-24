@@ -60,8 +60,8 @@ public class MosterSpawn : MonoBehaviour
                 int randomSpawn = Random.Range(0, 10);
 
                 //Rookie 영점 조절
-                float xPos = (spawnPoint.x * x) - 1.12f;
-                float yPos = (spawnPoint.y * -y) - 2.1f;
+                float xPos = (spawnPoint.x * x) - 0f;
+                float yPos = (spawnPoint.y * -y) - 1.69f;
 
                 //Neighbour 영점 조절 
                 float xPos1 = (spawnPoint1.x * x) + 5.5f;
@@ -115,11 +115,11 @@ public class MosterSpawn : MonoBehaviour
 
                 //Rookie 영점 조절
                 float xPos = (spawnPoint.x * x) - 1.12f;
-                float yPos = (spawnPoint.y * -y) - 2.1f;
+                float yPos = (spawnPoint.y * -y) - 1.69f;
 
                 //LeftRookie 영점 조절
                 float xPos4 = (spawnPoint.x * x) + 1.5f;
-                float yPos4 = (spawnPoint.y * -y) - 2.1f;
+                float yPos4 = (spawnPoint.y * -y) - 1.69f;
 
                 //Neighbour 영점 조절 
                 float xPos1 = (spawnPoint1.x * x) - 5.2f;
@@ -144,13 +144,7 @@ public class MosterSpawn : MonoBehaviour
                     {
                         if (randomRL == 0)
                         {
-                            //Vector3 rightMonsterSpwaner = rookieSpwanPoint + Vector3.right * spacingRight;
-                            //Instantiate(rookiePreafab_R, rightMonsterSpwaner, Quaternion.identity);
-                            //Vector3 leftMonsterSpwaner = rookieSpwanPoint + Vector3.right * spacingRight;
-                            //Instantiate(rookiePreafab_L, rightMonsterSpwaner, Quaternion.identity);
 
-                            //Vector3 leftMonsterSpwaner = rookieSpwanPoint + Vector3.left * spacingRight;
-                            //Instantiate(rookiePreafab_R, leftMonsterSpwaner, Quaternion.identity);
 
 
                             Vector3 rightMonsterSpwaner = rookieSpwanPoint + Vector3.right * spacingRight;
@@ -158,8 +152,7 @@ public class MosterSpawn : MonoBehaviour
 
                             Vector3 leftMonsterSpwaner = leftRookieSpwanPoint + Vector3.left * spacingRight;
                             Instantiate(rookiePreafab_R, leftMonsterSpwaner, Quaternion.identity);
-                            //RookieLeftPrefabFlip();
-                            //RookieLeftPrefabFlip();
+
 
 
                         }
@@ -172,8 +165,7 @@ public class MosterSpawn : MonoBehaviour
 
                             Vector3 leftMonsterSpwaner = leftRookieSpwanPoint + Vector3.left * spacingRight;
                             Instantiate(rookiePreafab_R, leftMonsterSpwaner, Quaternion.identity);
-                            //RookieLeftPrefabFlip();
-                            //RookieLeftPrefabFlip();
+
 
                         }
                     }
@@ -210,57 +202,8 @@ public class MosterSpawn : MonoBehaviour
 
     }
 
-    //public void NeighbourPrefabFlip()
-    //{
-    //    // 현재 스케일을 가져옴
-    //    Vector3 currentScale = neighbourPreafab.transform.localScale;
-
-    //    // x축 스케일을 반전
-    //    Vector3 newScale = new Vector3(-currentScale.x, currentScale.y, currentScale.z);
-
-    //    // 프리팹의 스케일을 수정하여 반전 적용
-    //    neighbourPreafab.transform.localScale = newScale;
-    //}
-
-    //public void RookieLeftPrefabFlip()
-    //{
-    //    // 현재 스케일을 가져옴
-    //    Vector3 currentScale = rookiePreafab_L.transform.localScale;
-
-    //    // x축 스케일을 반전
-    //    Vector3 newScale = new Vector3(-currentScale.x, currentScale.y, currentScale.z);
-
-    //    // 프리팹의 스케일을 수정하여 반전 적용
-    //    rookiePreafab_L.transform.localScale = newScale;
 
 
-    //}
-    //public void ImageSc()
-    //{
-    //    Vector3 uiImageScale = uiImage.transform.localScale;
-
-    //    Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
-
-    //    uiImage.transform.localScale = newScale;
-    //}
-
-    //public void ImageSc1()
-    //{
-    //    Vector3 uiImageScale = uiImage1.transform.localScale;
-
-    //    Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
-
-    //    uiImage1.transform.localScale = newScale;
-    //}
-
-    //public void ImageSc2()
-    //{
-    //    Vector3 uiImageScale = uiImage2.transform.localScale;
-
-    //    Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
-
-    //    uiImage2.transform.localScale = newScale;
-    //}
 
 }
 

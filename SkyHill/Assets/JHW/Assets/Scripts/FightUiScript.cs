@@ -9,36 +9,79 @@ using UnityEngine.UI;
 public class FightUiScript : MonoBehaviour, IPointerClickHandler
 
 {
-    public GameObject uiImage; // 활성화할 UI 이미지
-    public GameObject uiImage1; // 활성화할 UI 이미지
-    public GameObject uiImage2; // 활성화할 UI 이미지
+    public GameObject leftHandImg; // 활성화할 UI 이미지
+    public GameObject rightHandImg; // 활성화할 UI 이미지
+    public GameObject attackTypeImg; // 활성화할 UI 이미지
 
-    public Image newImageSprite; // 클릭 시 변경할 이미지 스프라이트
-    public Image image; // UI 이미지의 Image 컴포넌트
+
+    public GameObject AttackArea_R;
+    public GameObject AttackArea_N;
+
+
+
+
     public void Start()
     {
-        image = GetComponent<Image>(); // UI 이미지의 Image 컴포넌트 가져오기
 
 
-        uiImage = GameObject.Find("LeftHand_F");
-        uiImage1 = GameObject.Find("RightHand_F");
-        uiImage2 = GameObject.Find("AttackType");
-        //uiImage.SetActive(false);
-        //uiImage1.SetActive(false);
-        //uiImage2.SetActive(false);
+
+        leftHandImg = GameObject.Find("LeftHand");
+        rightHandImg = GameObject.Find("RightHand");
+        attackTypeImg = GameObject.Find("AttackType");
 
 
-        ImageSc();
-        ImageSc1();
+        AttackArea_R = GameObject.Find("AttackArea");
+        AttackArea_N = GameObject.Find("AttackArea2");
+
+
+
+        //ImageSc();
+        //ImageSc1();
         ImageSc2();
+        ImageSc6();
+        ImageSc8();
+
+
+
     }
+
+
+    public void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+
+            }
+            else
+            {
+                // 마우스 클릭 위치를 월드 좌표로 변환
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition.z = 0;
+
+                // 마우스 클릭한 위치에 해당하는 오브젝트 찾기
+                Collider2D collider = Physics2D.OverlapPoint(mousePosition);
+
+                if (collider != null && collider.CompareTag("Rookie"))
+                {
+                    ImageSc7();
+                }
+                if (collider != null && collider.CompareTag("Neighbour"))
+                {
+                    ImageSc9();
+                }
+            }
+        }
+
+    }
+
     // Start is called before the first frame update
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Enemy"))
+        if (collision.tag.Equals("Rookie") || collision.tag.Equals("Neighbour"))
         {
-            Debug.Log("만났다!!");
-
+            Debug.Log("몬스터랑 만났다!");
             ActivateUIImages();
 
         }
@@ -46,9 +89,9 @@ public class FightUiScript : MonoBehaviour, IPointerClickHandler
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Enemy"))
+        if (collision.tag.Equals("Rookie") || collision.tag.Equals("Neighbour"))
         {
-            Debug.Log("나갔다 !!! ");
+            Debug.Log("몬스터랑 만났다!");
 
             ActivateUIImages2();
 
@@ -57,18 +100,18 @@ public class FightUiScript : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (newImageSprite != null)
+
+        if (gameObject.CompareTag("Finish"))
         {
-            Debug.Log("클릭이다!");
-            image = newImageSprite; // 이미지 스프라이트 변경
+            ImageSc6();
+            ImageSc8();
         }
+
     }
 
     private void ActivateUIImages()
     {
-        uiImage.SetActive(true);
-        uiImage1.SetActive(true);
-        uiImage2.SetActive(true);
+
         ImageSc3();
         ImageSc4();
         ImageSc5();
@@ -77,65 +120,103 @@ public class FightUiScript : MonoBehaviour, IPointerClickHandler
 
     private void ActivateUIImages2()
     {
-        uiImage.SetActive(false);
-        uiImage1.SetActive(false);
-        uiImage2.SetActive(false);
+        ImageSc();
+        ImageSc1();
+        ImageSc2();
     }
 
-
-    public void ImageSc3()
-    {
-        Vector3 uiImageScale = uiImage.transform.localScale;
-
-        Vector3 newScale = new Vector3(1, 1, 0);
-
-        uiImage.transform.localScale = newScale;
-    }
-
-    public void ImageSc4()
-    {
-        Vector3 uiImageScale = uiImage1.transform.localScale;
-
-        Vector3 newScale = new Vector3(1, 1, 0);
-
-        uiImage1.transform.localScale = newScale;
-    }
-
-    public void ImageSc5()
-    {
-        Vector3 uiImageScale = uiImage2.transform.localScale;
-
-        Vector3 newScale = new Vector3(0.7f, 0.7f, 0);
-
-        uiImage2.transform.localScale = newScale;
-    }
 
 
     public void ImageSc()
     {
-        Vector3 uiImageScale = uiImage.transform.localScale;
+        Vector3 uiImageScale = leftHandImg.transform.localScale;
 
         Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
 
-        uiImage.transform.localScale = newScale;
+        leftHandImg.transform.localScale = newScale;
     }
 
     public void ImageSc1()
     {
-        Vector3 uiImageScale = uiImage1.transform.localScale;
+        Vector3 uiImageScale = rightHandImg.transform.localScale;
 
         Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
 
-        uiImage1.transform.localScale = newScale;
+        rightHandImg.transform.localScale = newScale;
     }
 
     public void ImageSc2()
     {
-        Vector3 uiImageScale = uiImage2.transform.localScale;
+        Vector3 uiImageScale = attackTypeImg.transform.localScale;
 
         Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
 
-        uiImage2.transform.localScale = newScale;
+        attackTypeImg.transform.localScale = newScale;
+    }
+
+    public void ImageSc3()
+    {
+        Vector3 uiImageScale = leftHandImg.transform.localScale;
+
+        Vector3 newScale = new Vector3(1, 1, 0);
+
+        leftHandImg.transform.localScale = newScale;
+    }
+
+    public void ImageSc4()
+    {
+        Vector3 uiImageScale = rightHandImg.transform.localScale;
+
+        Vector3 newScale = new Vector3(1, 1, 0);
+
+        rightHandImg.transform.localScale = newScale;
+    }
+
+    public void ImageSc5()
+    {
+        Vector3 uiImageScale = attackTypeImg.transform.localScale;
+
+        Vector3 newScale = new Vector3(0.7f, 0.7f, 0);
+
+        attackTypeImg.transform.localScale = newScale;
+    }
+
+    public void ImageSc6()
+    {
+        Vector3 uiImageScale = AttackArea_R.transform.localScale;
+
+        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
+
+        AttackArea_R.transform.localScale = newScale;
+    }
+
+
+    public void ImageSc7()
+    {
+        Vector3 uiImageScale = AttackArea_R.transform.localScale;
+
+        Vector3 newScale = new Vector3(1f, 1f, 1f);
+
+        AttackArea_R.transform.localScale = newScale;
+    }
+
+    public void ImageSc8()
+    {
+        Vector3 uiImageScale = AttackArea_N.transform.localScale;
+
+        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
+
+        AttackArea_N.transform.localScale = newScale;
+    }
+
+
+    public void ImageSc9()
+    {
+        Vector3 uiImageScale = AttackArea_N.transform.localScale;
+
+        Vector3 newScale = new Vector3(1f, 1f, 1f);
+
+        AttackArea_N.transform.localScale = newScale;
     }
 
 }
