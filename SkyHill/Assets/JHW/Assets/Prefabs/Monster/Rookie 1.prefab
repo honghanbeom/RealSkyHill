@@ -1300,11 +1300,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2507986588537612010}
   - component: {fileID: 3503671615121438474}
-  - component: {fileID: 1414054842991367106}
   - component: {fileID: -2340437213376691398}
+  - component: {fileID: -6498076436302029592}
+  - component: {fileID: 6463912452119553837}
   m_Layer: 0
   m_Name: Rookie 1
-  m_TagString: Enemy
+  m_TagString: Rookie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1318,7 +1319,7 @@ Transform:
   m_GameObject: {fileID: 4006000860370747471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: -0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6533563659824782556}
@@ -1361,18 +1362,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1414054842991367106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4006000860370747471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8562e6c6519bf5d4d913019a55f7ac43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &-2340437213376691398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1399,6 +1388,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &-6498076436302029592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006000860370747471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 504ba8621d0f9764293f07c9823a2cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 11400000, guid: 178d3395230ff5440be970f137712613, type: 2}
+  monsterData2: {fileID: 11400000, guid: ffb1db7863402424eb656ddccf9cb56e, type: 2}
+--- !u!114 &6463912452119553837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006000860370747471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a06c1f1f5e36649b63149c862501d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterData: {fileID: 0}
+  animator: {fileID: 3503671615121438474}
+  leftHandImg: {fileID: 0}
+  rightHandImg: {fileID: 0}
+  attackTypeImg: {fileID: 0}
+  AttackArea_R: {fileID: 0}
+  AttackArea_N: {fileID: 0}
 --- !u!1 &4172483910143112880
 GameObject:
   m_ObjectHideFlags: 0

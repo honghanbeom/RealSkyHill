@@ -19,7 +19,6 @@ public class UserControl : MonoBehaviour
     public float maxHunger = 100.0f;
 
 
-
     public Animator animator; // Animator 컴포넌트
 
 
@@ -41,7 +40,10 @@ public class UserControl : MonoBehaviour
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 // UI 오브젝트 위에 있는 경우에 실행할 코드 작성
+
                 Debug.Log("마우스 클릭! UI 위에 있음");
+
+
             }
             else
             {
@@ -61,13 +63,13 @@ public class UserControl : MonoBehaviour
                 {
                     targetPosition = collider.transform.position;
                     targetPosition.y -= 4.43f;
-                    targetPosition.x -= 1.25f;
+                    targetPosition.x -= 1.35f;
                     isMoving = true;
-                    Debug.LogFormat("눌렸다!");
 
-                    DecreaseHp();
+                    DecreaseHunger();
                     Debug.LogFormat("배고픔 {0}", UserInformation.player.hunger);
                 }
+                
 
             }
         }
@@ -93,19 +95,21 @@ public class UserControl : MonoBehaviour
 
     }
 
-    public void DecreaseHp()
+    public void DecreaseHunger()
     {
         UserInformation.player.hunger -= 1;
         UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
         //UpdateUI(UserInformation.player.hunger);
     }
 
-    public void IncreaseHp()
+    public void IncreaseHunger()
     {
         UserInformation.player.hunger += 1;
         UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
         //UpdateUI(UserInformation.player.hunger);
     }
+
+
 
 
 

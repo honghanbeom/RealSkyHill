@@ -94,7 +94,11 @@ AnimatorStateMachine:
     m_Position: {x: 260, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8888890825315857010}
+<<<<<<< HEAD
+    m_Position: {x: 520, y: 100, z: 0}
+=======
     m_Position: {x: 550, y: 110, z: 0}
+>>>>>>> origin/JHW_0816
   - serializedVersion: 1
     m_State: {fileID: -480298099173075898}
     m_Position: {x: 480, y: 220, z: 0}
@@ -290,6 +294,9 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
+<<<<<<< HEAD
+    m_Controller: {fileID: 9100000}
+=======
     m_Controller: {fileID: 0}
   - m_Name: SpearAttack
     m_Type: 4
@@ -309,6 +316,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+>>>>>>> origin/JHW_0816
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
