@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClickChange : MonoBehaviour
@@ -9,6 +10,8 @@ public class ClickChange : MonoBehaviour
     public Sprite changeImage;
 
     private SpriteRenderer spriteRenderer;
+
+    private bool isClicked = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -26,18 +29,22 @@ public class ClickChange : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("±Â");
-        if (changeImage != null && spriteRenderer != null)
+        if (!isClicked)
         {
-            if (gb.CompareTag("Clickable"))
+            Debug.Log("±Â");
+            if (changeImage != null && spriteRenderer != null)
             {
-                //gb.SetActive(false);
-                spriteRenderer.sprite = changeImage;
+                if (gb.CompareTag("Clickable"))
+                {
+                    //gb.SetActive(false);
+                    spriteRenderer.sprite = changeImage;
+                }
             }
+
+            int randomIndex = Random.Range(0, DropItem.dropItem.dropItemData.Count);
+            ItemManager.myInvenList.Add(DropItem.dropItem.dropItemData[randomIndex]);
+            ItemManager.itemManager.ItemRoutine();
+            isClicked = true;
         }
-        
-        int randomIndex = Random.Range(0, DropItem.dropItem.dropItemData.Count);
-        ItemManager.myInvenList.Add(DropItem.dropItem.dropItemData[randomIndex]);
-        ItemManager.itemManager.ItemRoutine();
     }
 }

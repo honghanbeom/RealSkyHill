@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour, IPointerClickHandler
         if (isOn == false)
         {
             foreach (GameObject objs in buttonControllObjs)
-            { 
+            {
                 objs.transform.localScale = transform.localScale * maxScaleFactor;
                 isOn = true;
             }

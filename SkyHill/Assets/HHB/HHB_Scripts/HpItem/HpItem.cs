@@ -81,8 +81,41 @@ public class HpItem : MonoBehaviour, IHPItem
 
     // SPOILED
     public void UseSpoiledFood(int itemId)
-    { 
-        // 폴리싱
-    
+    {
+        float hungry = default;
+        float damamge = default;
+        int poisionProb = 50;
+        int randomProb = Random.Range(0, 100);
+        // SPOILEDFOOD
+        if (itemId >= 800 && itemId <= 808)
+        {
+            List<Dictionary<string, object>> spoiledFood = CSVReader.Read("SPOILEDFOOD");
+            hungry = (float)((int)spoiledFood[itemId - 800]["HP"]);
+            damamge = (float)((int)spoiledFood[itemId - 800]["DAMAGE"]);
+        }
+
+        // 배고픔 추가 로직 && 중독로직 && 데미지로직
+        if (UserInformation.player.hunger + hungry >= 100f)
+        {
+            UserInformation.player.hunger = 100f;
+            UserInformation.player.hp -= damamge;
+
+            if (poisionProb > randomProb)
+            { 
+                UserInformation.player.poision = true;
+            }
+        }
+        else if (UserInformation.player.hunger + hungry < 100f)
+        {
+            UserInformation.player.hp -= damamge;
+            UserInformation.player.hunger += hungry;
+
+            if (poisionProb > randomProb)
+            {
+                UserInformation.player.poision = true;
+            }
+        }
+        ItemManager.myMediList.Remove(itemId);
+        ItemManager.itemManager.ItemRoutine();
     }
 }

@@ -11,6 +11,7 @@ public class UserInformation : MonoBehaviour
     // 내가 장착한 아이템 배열
     // 이거 읽어서 이미지 출력하고 관리해야할듯
     public List<int> myEquipWeapon = new List<int>() { -1, -1 };
+
     // 이전 플레이어 스텟
     // {lastWeaponID, playerLastMinDamage, playerLastMaxDamage, playerLastDEX, playerLastSTR, playerLastSPD}
     //       [0]             [1]             [2]          [3]         [4]         [5]             [6]
@@ -24,6 +25,7 @@ public class UserInformation : MonoBehaviour
     public float minAttackDamage = 1.0f;
     public float maxAttackDamage = 2.0f;
     public int exp = 0;
+    public int maxEXP = 50;
     public bool poision = false;
     public int dex = 5;
     public int str = 5;
@@ -44,13 +46,14 @@ public class UserInformation : MonoBehaviour
             DontDestroyOnLoad(player);
         }
         SaveLastItemData(-1);
-        //lastStats.Add(-1f);
-        //lastStats.Add(4f);
-        //lastStats.Add(10f);
-        //lastStats.Add(5f);
-        //lastStats.Add(5f);
-        //lastStats.Add(5f);
+
     }
+
+    private void Update()
+    {
+
+    }
+
 
     // !!!!! 레벨 업시 반드시 이 함수 호출해야함.!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // 마지막 유저 정보 저장
@@ -60,9 +63,10 @@ public class UserInformation : MonoBehaviour
         //       [0]             [1]             [2]          [3]         [4]         [5]             [6]
 
         // 유저의 마지막 스텟 상태
+        lastStats.Clear();
         lastStats.Add(id);
-        lastStats.Add(minAttackDamage);
-        lastStats.Add(maxAttackDamage);
+        lastStats.Add(1f);
+        lastStats.Add(2f);
         lastStats.Add(dex);
         lastStats.Add(str);
         lastStats.Add(spd);
@@ -83,4 +87,9 @@ public class UserInformation : MonoBehaviour
         str = (int)lastStats[4];
         spd = (int)lastStats[5];
     }
+
+    //public void UserEXP()
+    //{
+    //    StatUI.statUI.StatUIRoutine();
+    //}
 }

@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using Unity.PlasticSCM.Editor.WebApi;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -70,6 +67,8 @@ public class CombinationCreateButton : MonoBehaviour, IPointerClickHandler
                 weaponImage = FindObjectOfType<WeaponImage>();
                 weaponImage.ControlLeftImage(UserInformation.player.myEquipWeapon);
                 weaponImage.ControlRightImage(UserInformation.player.myEquipWeapon);
+                WeaponUIManager.weaponUI.WeaponNamePrint();
+                WeaponUIManager.weaponUI.WeaponStatPrint();
                 //for (int i = 0; i < ItemManager.myWeaponList.Count; i++)
                 //{
                 //    Debug.Log(ItemManager.myWeaponList[i]);

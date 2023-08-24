@@ -33,8 +33,8 @@ public class WeaponImage : MonoBehaviour
 
         // 이거 색 고민 해봐야할듯ㅎㅎ;
         Color rightImageColor = rightWeaponImages.color;
-        rightImageColor= new Color(1f,1f,1f,1f);
-        rightWeaponImages.color = rightImageColor;  
+        rightImageColor = new Color(1f, 1f, 1f, 1f);
+        rightWeaponImages.color = rightImageColor;
     }
 
     public void ClassifyColor(int id, Image image)
@@ -62,15 +62,13 @@ public class WeaponImage : MonoBehaviour
             { 
                 image.color = Color.red;
             }
-
-
         }
         // (301 ~ 324) MAKINGWEAPON
         if (id >= 301 && id <= 324)
         {
-            reqDEX = (int)(rootWeapon[id - 301]["REQ_DEX"]);
-            reqSTR = (int)(rootWeapon[id - 301]["REQ_STR"]);
-            reqSPD = (int)(rootWeapon[id - 301]["REQ_SPD"]);
+            reqDEX = (int)(makingWeapon[id - 301]["REQ_DEX"]);
+            reqSTR = (int)(makingWeapon[id - 301]["REQ_STR"]);
+            reqSPD = (int)(makingWeapon[id - 301]["REQ_SPD"]);
 
             // 모든 조건을 충족할 경우
             if (UserInformation.player.dex >= reqDEX &&
@@ -83,7 +81,6 @@ public class WeaponImage : MonoBehaviour
             {
                 image.color = Color.red;
             }
-
         }
     }
 }

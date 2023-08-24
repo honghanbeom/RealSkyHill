@@ -80,8 +80,8 @@ public class ItemList : MonoBehaviour
             int index = id - 700;
             image.sprite = freshFoodSprites[index];
         }
-        // (800 ~ 813) SPOILEDFOOD
-        else if (id >= 800 && id <= 813)
+        // (800 ~ 808) SPOILEDFOOD
+        else if (id >= 800 && id <= 808)
         {
             int index = id - 800;
             image.sprite = spoiledFoodSprites[index];
