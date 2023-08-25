@@ -7,9 +7,13 @@ public class MonsterData : ScriptableObject
 
     
 
-    public string monsterName = "Rookie";
-    public int health = 20;
-    public int damage = 4;
+    public string MonsterName = "Rookie";
+    public int MonsterHP = 20;
+    public int MonsterMaxDamage = 4;
+    public int MonsterMidDamage = 3;
+    public int MonsterMinDamage = 2;
+    public int MonsterEXP = 20;
+
 
 
 

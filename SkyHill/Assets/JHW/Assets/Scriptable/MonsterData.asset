@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534ccb2f43f647a49bb88ce8af0a4412, type: 3}
   m_Name: MonsterData
   m_EditorClassIdentifier: 
-  monsterName: Rookie
-  health: 20
-  damage: 4
+  MonsterName: Rookie
+  MonsterHP: 20
+  MonsterMaxDamage: 4
+  MonsterMidDamage: 3
+  MonsterMinDamage: 2
+  MonsterEXP: 20
