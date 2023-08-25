@@ -340,7 +340,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-3397536810697544092
+--- !u!114 &3168430022605245050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,32 +349,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3052473852422410874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a06c1f1f5e36649b63149c862501d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d4fc766e87415f43af6bca732d9ae6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterData: {fileID: 0}
-  animator: {fileID: 3295332092923147464}
-  leftHandImg: {fileID: 0}
-  rightHandImg: {fileID: 0}
-  attackTypeImg: {fileID: 0}
-  AttackArea_R: {fileID: 0}
-  AttackArea_N: {fileID: 0}
---- !u!114 &2759348105015416300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052473852422410874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 504ba8621d0f9764293f07c9823a2cd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monsterData: {fileID: 11400000, guid: 178d3395230ff5440be970f137712613, type: 2}
-  monsterData2: {fileID: 11400000, guid: ffb1db7863402424eb656ddccf9cb56e, type: 2}
---- !u!95 &3295332092923147464 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 497954639475075883, guid: 9c76abea7ce73e0428319cd1eb7e1c5b, type: 3}
-  m_PrefabInstance: {fileID: 3121636721109475299}
-  m_PrefabAsset: {fileID: 0}
+  monsterData: {fileID: 11400000, guid: c9e5caea852229045b88e6fd33c58c86, type: 2}
+  monsterData2: {fileID: 11400000, guid: c9e5caea852229045b88e6fd33c58c86, type: 2}

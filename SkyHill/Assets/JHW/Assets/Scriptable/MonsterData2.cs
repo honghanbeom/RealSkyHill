@@ -4,8 +4,11 @@ using UnityEngine;
 public class MonsterData2 : ScriptableObject
 {
 
-    public string monsterName = "Neighbour";
-    public int health = 30;
-    public int damage = 5;
+    public string MonsterName = "Neighbour";
+    public int MonsterHP = 30;
+    public int MonsterMaxDamage = 6;
+    public int MonsterMidDamage = 5;
+    public int MonsterMinDamage = 4;
+    public int MonsterEXP = 50;
 
 }

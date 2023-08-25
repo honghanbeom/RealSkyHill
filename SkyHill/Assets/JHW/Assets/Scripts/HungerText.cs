@@ -33,14 +33,14 @@ public class HungerText : MonoBehaviour
 
 
 
-    public void DecreaseHp()
+    public void DecreaseHunger()
     {
         UserInformation.player.hunger -= decreaseRate;
         UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
         UpdateUI(UserInformation.player.hunger);
     }
 
-    public void IncreaseHp()
+    public void IncreaseHunger()
     {
         UserInformation.player.hunger += increaseRate;
         UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
