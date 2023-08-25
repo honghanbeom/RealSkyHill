@@ -74,7 +74,10 @@ public class ItemManager : MonoBehaviour
         myInvenList.Add(101);
         myInvenList.Add(504);
         myInvenList.Add(504);
-        //myInvenList.Add(801);
+        myInvenList.Add(801);
+        myInvenList.Add(801);
+        myInvenList.Add(801);
+        myInvenList.Add(801);
         myInvenList.Add(1000);
         myInvenList.Add(1001);
         myInvenList.Add(1002);

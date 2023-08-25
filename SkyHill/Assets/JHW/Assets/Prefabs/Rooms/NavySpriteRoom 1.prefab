@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 914980459046980259}
   - component: {fileID: 6003830921380652352}
   - component: {fileID: 5296834648978216653}
+  - component: {fileID: 8289210775951526046}
   m_Layer: 0
   m_Name: Click
   m_TagString: PlayerMoving
@@ -568,6 +569,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8289210775951526046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2393923250897539052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a1d15f7522dc24f90e45333a22a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2677267233161847142
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,11 +759,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5551067208534890129}
   - component: {fileID: 371262073885063140}
-  - component: {fileID: 2855661765082672453}
   - component: {fileID: 6960825663948019887}
+  - component: {fileID: 1394069909691448240}
   m_Layer: 0
   m_Name: atlas0 #907_222
-  m_TagString: EleDoor
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -822,18 +835,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2855661765082672453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7672390171442798293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f64b2f543dc5194b870209daf511dd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &6960825663948019887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -860,3 +861,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36, y: 0.36}
   m_EdgeRadius: 0
+--- !u!114 &1394069909691448240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672390171442798293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c080bbeab0f598f4f96f8f65ede9f8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

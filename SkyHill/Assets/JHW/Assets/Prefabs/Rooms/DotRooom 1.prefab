@@ -305,6 +305,7 @@ GameObject:
   - component: {fileID: 1922281438723228741}
   - component: {fileID: 5480765799963392891}
   - component: {fileID: 1996886694262467585}
+  - component: {fileID: 3952208841825345542}
   m_Layer: 0
   m_Name: Click
   m_TagString: PlayerMoving
@@ -405,6 +406,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3952208841825345542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4612988235897946302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a1d15f7522dc24f90e45333a22a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5425694780156206236
 GameObject:
   m_ObjectHideFlags: 0

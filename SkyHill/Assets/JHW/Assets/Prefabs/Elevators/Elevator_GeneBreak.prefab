@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 187996542943538199}
   - component: {fileID: 4494158847425402970}
   - component: {fileID: 9047991809669243181}
+  - component: {fileID: 8492648024967629339}
   m_Layer: 0
   m_Name: Click_Ev
   m_TagString: PlayerMoving
@@ -111,6 +112,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8492648024967629339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4049859352778625594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a1d15f7522dc24f90e45333a22a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4696175612200297828
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +303,7 @@ GameObject:
   - component: {fileID: 4696175612319175407}
   - component: {fileID: 4696175612319175400}
   - component: {fileID: 4696175612319175401}
-  - component: {fileID: 4696175612319175406}
+  - component: {fileID: 1633859385704977721}
   m_Layer: 0
   m_Name: atlas0 #951_4
   m_TagString: EleDoor
@@ -391,7 +404,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67, y: 1.4}
   m_EdgeRadius: 0
---- !u!114 &4696175612319175406
+--- !u!114 &1633859385704977721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,7 +413,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4696175612319175404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f64b2f543dc5194b870209daf511dd4, type: 3}
+  m_Script: {fileID: 11500000, guid: b62c3a7532591db43ae88bec4e999c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4696175612340832031

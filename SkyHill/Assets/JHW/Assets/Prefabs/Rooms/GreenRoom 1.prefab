@@ -112,8 +112,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1539172966078288410}
   - {fileID: 997645052156259694}
+  - {fileID: 1539172966078288410}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -531,7 +531,7 @@ Transform:
   - {fileID: 4179642740666722070}
   - {fileID: 8325532541112669490}
   m_Father: {fileID: 3759889384403082117}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4084050468564997386
 GameObject:
@@ -796,6 +796,7 @@ GameObject:
   - component: {fileID: 1539172966078288410}
   - component: {fileID: 1527756090542880071}
   - component: {fileID: 2088162337737088722}
+  - component: {fileID: 7392910593943357716}
   m_Layer: 0
   m_Name: Click
   m_TagString: PlayerMoving
@@ -816,7 +817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3759889384403082117}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1527756090542880071
 BoxCollider2D:
@@ -896,3 +897,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7392910593943357716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9043606128649566280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a1d15f7522dc24f90e45333a22a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

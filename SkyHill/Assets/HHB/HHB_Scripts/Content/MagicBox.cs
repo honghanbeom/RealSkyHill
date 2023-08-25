@@ -90,13 +90,13 @@ public class MagicBox : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
 
     public void OnPointerEnter(PointerEventData eventData) 
     {
-        Debug.LogFormat("마우스가 위에 있음 {0}", itemId);
+        //Debug.LogFormat("마우스가 위에 있음 {0}", itemId);
 
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.LogFormat("마우스 나감 {0}", itemId);
+        //Debug.LogFormat("마우스 나감 {0}", itemId);
     }
 
 

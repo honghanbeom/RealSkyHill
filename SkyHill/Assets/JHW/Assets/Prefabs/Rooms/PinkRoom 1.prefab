@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 8634405673429929597}
   - component: {fileID: 7165672500191600791}
   - component: {fileID: 404705309748211965}
+  - component: {fileID: 750007856496921503}
   m_Layer: 0
   m_Name: Click
   m_TagString: PlayerMoving
@@ -199,7 +200,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1465953242436673003}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7165672500191600791
 BoxCollider2D:
@@ -279,6 +280,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &750007856496921503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085028973825347876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a1d15f7522dc24f90e45333a22a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3937597493465076496
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +412,7 @@ Transform:
   - {fileID: 2248581449277575306}
   - {fileID: 1026373569914917702}
   m_Father: {fileID: 1465953242436673003}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &4994791391383969288
 GameObject:
@@ -597,8 +610,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8634405673429929597}
   - {fileID: 1886625052022853526}
+  - {fileID: 8634405673429929597}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

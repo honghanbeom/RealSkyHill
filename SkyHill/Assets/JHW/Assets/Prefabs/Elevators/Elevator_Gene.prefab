@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 135175445447219773}
   - component: {fileID: 270828145110880994}
   - component: {fileID: 6379883639697076736}
+  - component: {fileID: 6920948979805585893}
   m_Layer: 0
   m_Name: Click_Ev
   m_TagString: PlayerMoving
@@ -111,6 +112,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6920948979805585893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838841090259405949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a1d15f7522dc24f90e45333a22a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7939365701808014017
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,8 +194,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -581734213
-  m_SortingLayer: 2
+  m_SortingLayerID: -490042043
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 526821490, guid: a2075f88f24d9684fb4227f11ff8c10d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -307,8 +320,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -581734213
-  m_SortingLayer: 2
+  m_SortingLayerID: -490042043
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 823423097, guid: a2075f88f24d9684fb4227f11ff8c10d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -920,7 +933,7 @@ GameObject:
   - component: {fileID: 7939365703590014109}
   - component: {fileID: 7939365703590014106}
   - component: {fileID: 7939365703590014107}
-  - component: {fileID: 7939365703590014108}
+  - component: {fileID: 1327965901297202609}
   m_Layer: 0
   m_Name: atlas0 #951_4
   m_TagString: EleDoor
@@ -1021,7 +1034,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.67, y: 1.4}
   m_EdgeRadius: 0
---- !u!114 &7939365703590014108
+--- !u!114 &1327965901297202609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1030,6 +1043,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7939365703590014110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f64b2f543dc5194b870209daf511dd4, type: 3}
+  m_Script: {fileID: 11500000, guid: b62c3a7532591db43ae88bec4e999c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

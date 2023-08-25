@@ -473,6 +473,7 @@ GameObject:
   - component: {fileID: 6176645529735514890}
   - component: {fileID: 4006635036151470496}
   - component: {fileID: 3602594133288700648}
+  - component: {fileID: 7950263358521002232}
   m_Layer: 0
   m_Name: Click
   m_TagString: PlayerMoving
@@ -573,6 +574,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7950263358521002232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6230130431675808945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a1d15f7522dc24f90e45333a22a0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6470065312741218730
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,11 +848,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5174858635616350616}
   - component: {fileID: 6899343729007387191}
-  - component: {fileID: 8577310784235982718}
   - component: {fileID: 1350005473339353833}
+  - component: {fileID: 3816201070724107257}
   m_Layer: 0
   m_Name: atlas0 #907_222 (1)
-  m_TagString: EleDoor
+  m_TagString: Clickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -911,18 +924,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8577310784235982718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7541470600526409415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f64b2f543dc5194b870209daf511dd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1350005473339353833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -949,6 +950,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36, y: 0.36}
   m_EdgeRadius: 0
+--- !u!114 &3816201070724107257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541470600526409415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c080bbeab0f598f4f96f8f65ede9f8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8779332285284629705
 GameObject:
   m_ObjectHideFlags: 0

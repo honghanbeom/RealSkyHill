@@ -21,10 +21,6 @@ public class UserControl : MonoBehaviour
 
     public Animator animator; // Animator ÄÄÆ÷³ÍÆ®
 
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -61,22 +57,19 @@ public class UserControl : MonoBehaviour
 
                 if (collider != null && collider.CompareTag("PlayerMoving"))
                 {
+
                     targetPosition = collider.transform.position;
                     targetPosition.y -= 4.43f;
                     targetPosition.x -= 1.35f;
                     isMoving = true;
 
-                    DecreaseHunger();
-                    Debug.LogFormat("¹è°íÇÄ {0}", UserInformation.player.hunger);
+                    //DecreaseHunger();
+                    //Debug.LogFormat("¹è°íÇÄ {0}", UserInformation.player.hunger);
                 }
                 
 
             }
         }
-
-
-
-
 
         if (isMoving)
         {
@@ -94,24 +87,4 @@ public class UserControl : MonoBehaviour
 
 
     }
-
-    public void DecreaseHunger()
-    {
-        UserInformation.player.hunger -= 1;
-        UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
-        //UpdateUI(UserInformation.player.hunger);
-    }
-
-    public void IncreaseHunger()
-    {
-        UserInformation.player.hunger += 1;
-        UserInformation.player.hunger = Mathf.Clamp(UserInformation.player.hunger, 0f, maxHunger);
-        //UpdateUI(UserInformation.player.hunger);
-    }
-
-
-
-
-
-
 }
