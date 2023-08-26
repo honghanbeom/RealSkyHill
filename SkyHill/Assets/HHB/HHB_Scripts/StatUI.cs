@@ -10,21 +10,12 @@ public class StatUI : MonoBehaviour
     public Text skillPointInfoText;
     public Text levelText;
     public Text expText;
+    public Image expImage;
 
     private void Awake()
     {
         statUI = this;
     }
-
-    //public void StatUIRoutine()
-    //{
-    //    if (UserInformation.player.skillPoint != 0)
-    //    {
-    //        LevelUpUI();
-    //        SkillPointUI();
-    //        LevelUI();
-    //    }
-    //}
 
     public void LevelUpUI()
     { 
@@ -51,5 +42,20 @@ public class StatUI : MonoBehaviour
 
         levelText.text = currentExp.ToString() + "/" + maxExp.ToString();
         expText.text = "ผ๖มุ : " + userLevel.ToString();
+    }
+
+    public void EXPFillAmount()
+    {
+        expImage.fillAmount = UserInformation.player.exp/UserInformation.player.maxEXP;
+    }
+
+    public void LevelUp()
+    {
+        if (UserInformation.player.exp >= UserInformation.player.maxEXP)
+        {
+            UserInformation.player.exp = 0;
+            UserInformation.player.maxEXP += 50;
+        }
+        else { /* Do Nothing*/ }
     }
 }
