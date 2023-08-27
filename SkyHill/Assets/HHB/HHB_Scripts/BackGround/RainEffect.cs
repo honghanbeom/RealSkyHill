@@ -9,13 +9,13 @@ public class RainEffect : MonoBehaviour
     public GameObject rainObj;
     public bool isRain = false;
     private RectTransform rectTransform;
-    private float rainspeed = 1f;
+    //private float rainspeed = 1f;
     
 
     private Vector3 originalPosition; // 원래 위치 저장
 
-    private float moveDistance = 0.2f; // 위 아래로 움직이는 거리
-    private float moveSpeed = 1f; // 움직임 속도
+    //private float moveDistance = 0.2f; // 위 아래로 움직이는 거리
+    //private float moveSpeed = 1f; // 움직임 속도
 
     //------------------------------------------------------------
     private Coroutine coroutine;

@@ -6,17 +6,24 @@ public class ButtonArea : MonoBehaviour
 {
     //public FightCoroutine fightCoroutine;
 
+    FightCoroutine fightCoroutine;
+
+    private void Awake()
+    {
+        fightCoroutine = FindObjectOfType<FightCoroutine>();   
+    }
+
 
     public void AttackAreaButton()
     {
-        FightCoroutine.fight.attackButton_L = true;
+        fightCoroutine.attackButton_L = true;
     }
     public void AttackAreaButton2()
     {
-        FightCoroutine.fight.attackButton_M = true;
+        fightCoroutine.attackButton_M = true;
     }
     public void AttackAreaButton3()
     {
-        FightCoroutine.fight.attackButton_R = true;
+        fightCoroutine.attackButton_R = true;
     }
 }

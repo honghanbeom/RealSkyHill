@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class FightCoroutine : MonoBehaviour
 {
-    private bool isPlayerTurn = true;
-    private bool playerClicked = false; // 플레이어가 공격 영역을 클릭했는지 여부
-    private bool animaitionAction = false;
+    //private bool isPlayerTurn = true;
+    //private bool playerClicked = false; // 플레이어가 공격 영역을 클릭했는지 여부
+    //private bool animaitionAction = false;
 
 
-    public MonsterData monsterData;
+    //public MonsterData monsterData;
 
     public Animator animator; // Animator
 
@@ -39,12 +39,8 @@ public class FightCoroutine : MonoBehaviour
     bool buttonClicked = false;
 
 
-    public static FightCoroutine fight;
+    //public static FightCoroutine fight;
 
-    private void Awake()
-    {
-        fight = this;
-    }
 
     public IEnumerator MonsterFight(string name, float hP, float maxDmg,
         float minDmg, float midDmg, float EXP , Animator monsterAnimation)
@@ -82,7 +78,7 @@ public class FightCoroutine : MonoBehaviour
 
             }
 
-            Debug.Log("버튼이 눌렸습니다.");
+            //Debug.Log("버튼이 눌렸습니다.");
 
             Debug.Log("-------------------------------------------------");
 
@@ -93,7 +89,7 @@ public class FightCoroutine : MonoBehaviour
             if (attackButton_L == true)
             {
 
-                Debug.Log("버튼 잘 눌린다.");
+                //Debug.Log("버튼 잘 눌린다.");
                 Rookie_ButtonLeft(out randomDmg, userMinDmg, userMaxDmg, userHit);
                 ImageSc6();
                 ImageSc8();
@@ -118,7 +114,7 @@ public class FightCoroutine : MonoBehaviour
             else if (attackButton_R == true)
             {
 
-                Debug.Log("버튼 잘 눌린다.");
+                //Debug.Log("버튼 잘 눌린다.");
                 Rookie_ButtonRight(out randomDmg, userMinDmg, userMaxDmg, userHit);
 
                 ImageSc6();
@@ -134,7 +130,7 @@ public class FightCoroutine : MonoBehaviour
             if (attackButton_L2 == true)
             {
 
-                Debug.Log("이웃 버튼 잘 눌린다.");
+                //Debug.Log("이웃 버튼 잘 눌린다.");
                 Neighbour_ButtonLeft(out randomDmg, userMinDmg, userMaxDmg, userHit);
                 ImageSc6();
                 ImageSc8();
@@ -147,7 +143,7 @@ public class FightCoroutine : MonoBehaviour
             else if (attackButton_M2 == true)
             {
 
-                Debug.Log("이웃 버튼 잘 눌린다.");
+                //Debug.Log("이웃 버튼 잘 눌린다.");
                 Neighbour_ButtonMid(out randomDmg, userMinDmg, userMaxDmg, userHit);
                 ImageSc6();
                 ImageSc8();
@@ -159,7 +155,7 @@ public class FightCoroutine : MonoBehaviour
             else if (attackButton_R2 == true)
             {
 
-                Debug.Log("이웃 버튼 잘 눌린다.");
+                //Debug.Log("이웃 버튼 잘 눌린다.");
                 Neighbour_ButtonRight(out randomDmg, userMinDmg, userMaxDmg, userHit);
 
                 ImageSc6();
@@ -173,7 +169,7 @@ public class FightCoroutine : MonoBehaviour
 
 
 
-
+            //
             if ((attackButton_L == true || attackButton_M == true || attackButton_R == true))
             {
 
@@ -223,7 +219,6 @@ public class FightCoroutine : MonoBehaviour
                     Destroy(monsterAnimation.GetComponent<MonsterClick>().collider);
                     Destroy(monsterAnimation.GetComponent<MonsterClick>().gameObject);
                     ImageSc13();
-                    hP = 20;
                     break;
 
                 }
@@ -244,10 +239,10 @@ public class FightCoroutine : MonoBehaviour
                 // 플레이어 애니메이션 실행 -> 애니메이션에 이벤트 넣는 방법으로 가능할듯
 
                 hP -= randomDmg;
-                MonsterHpUI2 ui2 = FindObjectOfType<MonsterHpUI2>();
 
                 Debug.LogFormat("유저가 준 데미지 : {0}", randomDmg);
                 Debug.LogFormat("몬스터 체력 : {0}/{1}", hP, 30);
+                MonsterHpUI2 ui2 = FindObjectOfType<MonsterHpUI2>();
                 ui2.MonsterUIUpdate2(hP);
 
                 Debug.Log("-------------------------------------------------");
@@ -285,7 +280,6 @@ public class FightCoroutine : MonoBehaviour
                     monsterAnimation.GetComponent<MonsterClick>().isFight = false;
                     Destroy(monsterAnimation.GetComponent<MonsterClick>().collider);
                     Destroy(monsterAnimation.GetComponent<MonsterClick>().gameObject);
-                    hP = 30;
                     
                     break;
 

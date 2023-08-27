@@ -53,7 +53,7 @@ public class UserControl : MonoBehaviour
 
                 // 마우스 클릭한 위치에 해당하는 오브젝트 찾기
                 Collider2D collider = Physics2D.OverlapPoint(mousePosition);
-                Debug.LogFormat("도대체 뭘 누른거지?? name: {0}, tag: {1}", collider.gameObject.name, collider.gameObject.tag);
+                //Debug.LogFormat("도대체 뭘 누른거지?? name: {0}, tag: {1}", collider.gameObject.name, collider.gameObject.tag);
 
                 if (collider != null && collider.CompareTag("PlayerMoving"))
                 {

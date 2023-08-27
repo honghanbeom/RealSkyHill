@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class ButtonArea2 : MonoBehaviour
 {
+    FightCoroutine fightCoroutine;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        fightCoroutine  = FindObjectOfType<FightCoroutine>();
+    }
+
 
     public void AttackAreaButton()
     {
-        FightCoroutine.fight.attackButton_L2 = true;
+        fightCoroutine.attackButton_L2 = true;
     }
     public void AttackAreaButton2()
     {
-        FightCoroutine.fight.attackButton_M2 = true;
+        fightCoroutine.attackButton_M2 = true;
     }
     public void AttackAreaButton3()
     {
-        FightCoroutine.fight.attackButton_R2 = true;
+        fightCoroutine.attackButton_R2 = true;
     }
 }

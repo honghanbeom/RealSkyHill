@@ -42,7 +42,8 @@ public class MonsterClick : MonoBehaviour
             if (!isFight)
             {
                 isFight=true;
-                StartCoroutine(FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
+                FightCoroutine fightCoroutine = FindObjectOfType<FightCoroutine>();
+                StartCoroutine(fightCoroutine.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
                     monsterMinDamage, monsterEXP, animator ));
             }
         }
@@ -65,7 +66,8 @@ public class MonsterClick : MonoBehaviour
             //    monsterMinDamage, monsterEXP);
             if (!isFight)
             {
-                StartCoroutine(FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
+                FightCoroutine fightCoroutine = FindObjectOfType<FightCoroutine>();
+                StartCoroutine(fightCoroutine.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
                     monsterMinDamage, monsterEXP, animator));
             }
         }

@@ -119,5 +119,7 @@ public class HpItem : MonoBehaviour, IHPItem
             poision.PoisionImageControl();
         }
 
+        ItemManager.myMediList.Remove(itemId);
+        ItemManager.itemManager.ItemRoutine();
     }
 }
