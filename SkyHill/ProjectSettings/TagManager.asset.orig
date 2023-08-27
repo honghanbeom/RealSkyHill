@@ -8,6 +8,11 @@ TagManager:
   - Clickable
   - PlayerMoving
   - Enemy
+  - Attack
+  - Rookie
+  - Neighbour
+  - Hungry
+  - Door
   layers:
   - Default
   - TransparentFX
@@ -45,6 +50,13 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Rain
+<<<<<<< HEAD
+    uniqueID: 1501854345
+=======
+    uniqueID: 4186078917
+>>>>>>> origin/JHW_0816
+    locked: 0
   - name: Building
     uniqueID: 4153002049
     locked: 0
@@ -70,9 +82,5 @@ TagManager:
     uniqueID: 3689794367
     locked: 0
   - name: FightUI
-<<<<<<< HEAD
-    uniqueID: 3101329647
-=======
     uniqueID: 4174514035
->>>>>>> origin/JHW_0816
     locked: 0

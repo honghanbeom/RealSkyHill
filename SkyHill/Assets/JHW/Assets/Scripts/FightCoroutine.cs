@@ -24,6 +24,8 @@ public class FightCoroutine : MonoBehaviour
 
     public GameObject AttackArea_R;
     public GameObject AttackArea_N;
+    public GameObject RookieUI;
+    public GameObject NeighbourUI;
 
     public bool attackButton_L = false;
     public bool attackButton_M = false;
@@ -35,7 +37,6 @@ public class FightCoroutine : MonoBehaviour
     public bool attackButton_R2 = false;
 
     bool buttonClicked = false;
-
 
 
     public static FightCoroutine fight;
@@ -67,7 +68,7 @@ public class FightCoroutine : MonoBehaviour
 
             while (!buttonClicked)
             {
-                Debug.Log(fight.attackButton_L);
+                //Debug.Log(fight.attackButton_L);
                 if (attackButton_L == true || attackButton_M == true|| attackButton_R == true )
                 {
 
@@ -133,7 +134,7 @@ public class FightCoroutine : MonoBehaviour
             if (attackButton_L2 == true)
             {
 
-                Debug.Log("버튼 잘 눌린다.");
+                Debug.Log("이웃 버튼 잘 눌린다.");
                 Neighbour_ButtonLeft(out randomDmg, userMinDmg, userMaxDmg, userHit);
                 ImageSc6();
                 ImageSc8();
@@ -146,7 +147,7 @@ public class FightCoroutine : MonoBehaviour
             else if (attackButton_M2 == true)
             {
 
-                Debug.Log("버튼 잘 눌린다.");
+                Debug.Log("이웃 버튼 잘 눌린다.");
                 Neighbour_ButtonMid(out randomDmg, userMinDmg, userMaxDmg, userHit);
                 ImageSc6();
                 ImageSc8();
@@ -158,45 +159,54 @@ public class FightCoroutine : MonoBehaviour
             else if (attackButton_R2 == true)
             {
 
-                Debug.Log("버튼 잘 눌린다.");
+                Debug.Log("이웃 버튼 잘 눌린다.");
                 Neighbour_ButtonRight(out randomDmg, userMinDmg, userMaxDmg, userHit);
 
                 ImageSc6();
                 ImageSc8();
+                
                 animator.SetBool("SpearAttack", true);
                 yield return new WaitForSeconds(0.7f);
                 animator.SetBool("SpearAttack", false);
+                
             }
 
 
 
 
-            if (attackButton_L == true || attackButton_M == true || attackButton_M == true)
+            if ((attackButton_L == true || attackButton_M == true || attackButton_R == true))
             {
-
 
                 // 클릭할 때 까지 wait 
                 // 플레이어 애니메이션 실행 -> 애니메이션에 이벤트 넣는 방법으로 가능할듯
 
                 hP -= randomDmg;
-
+                MonsterHpUI ui = FindObjectOfType<MonsterHpUI>();                
                 Debug.LogFormat("유저가 준 데미지 : {0}", randomDmg);
                 Debug.LogFormat("몬스터 체력 : {0}/{1}", hP, 20);
+                ui.MonsterUIUpdate(hP);
 
                 Debug.Log("-------------------------------------------------");
                 Debug.Log("몬스터 턴");
                 // 몬스터 애니메이션 실행
-                monsterAnimation.SetBool("Attack", true);
-                userHP -= monsterRandomDmg;
-                yield return new WaitForSeconds(0.35f);
-                monsterAnimation.SetBool("Attack", false);
+                if (hP > 0)
+                {
+                    monsterAnimation.SetBool("Attack", true);
+                    userHP -= monsterRandomDmg;
+                    yield return new WaitForSeconds(0.35f);
+                    monsterAnimation.SetBool("Attack", false);
 
-                Debug.LogFormat("몬스터가 준 데미지 : {0}", monsterRandomDmg);
-                Debug.LogFormat("플레이어 체력 : {0}/{1}", userHP, 100);
-                Debug.Log("-------------------------------------------------");
+
+                    Debug.LogFormat("몬스터가 준 데미지 : {0}", monsterRandomDmg);
+                    Debug.LogFormat("플레이어 체력 : {0}/{1}", userHP, 100);
+                    Debug.Log("-------------------------------------------------");
+                }
                 attackButton_L = false;
                 attackButton_M = false;
-                attackButton_R = false;
+                attackButton_R = false; 
+                attackButton_L2 = false;
+                attackButton_M2 = false;
+                attackButton_R2 = false;
                 buttonClicked = false;
 
                 if (userHP >= 0 && hP <= 0)
@@ -206,9 +216,14 @@ public class FightCoroutine : MonoBehaviour
                     userEXP += EXP;
                     Debug.LogFormat("유저 획득 경험치 : {0}", userEXP);
                     // 변경된 체력값 적용
-                    UserInformation.player.hp = userHP;
                     Debug.Log("-------------------------------------------------");
                     // 여기 레벨업 때 돌아야할 거 추가
+                    //monsterAnimation.SetBool("Dead", true);
+                    monsterAnimation.GetComponent<MonsterClick>().isFight = false;
+                    Destroy(monsterAnimation.GetComponent<MonsterClick>().collider);
+                    Destroy(monsterAnimation.GetComponent<MonsterClick>().gameObject);
+                    ImageSc13();
+                    hP = 20;
                     break;
 
                 }
@@ -222,29 +237,36 @@ public class FightCoroutine : MonoBehaviour
 
             //----------------------------------------------------------------------------------------------//
 
-            if ( attackButton_L2 == true || attackButton_M2 == true || attackButton_R2 == true)
+            if ( (attackButton_L2 == true || attackButton_M2 == true || attackButton_R2 == true))
             {
-
 
                 // 클릭할 때 까지 wait 
                 // 플레이어 애니메이션 실행 -> 애니메이션에 이벤트 넣는 방법으로 가능할듯
 
                 hP -= randomDmg;
+                MonsterHpUI2 ui2 = FindObjectOfType<MonsterHpUI2>();
 
                 Debug.LogFormat("유저가 준 데미지 : {0}", randomDmg);
-                Debug.LogFormat("몬스터 체력 : {0}/{1}", hP, 20);
+                Debug.LogFormat("몬스터 체력 : {0}/{1}", hP, 30);
+                ui2.MonsterUIUpdate2(hP);
 
                 Debug.Log("-------------------------------------------------");
                 Debug.Log("몬스터 턴");
                 // 몬스터 애니메이션 실행
-                monsterAnimation.SetBool("Attack2", true);
-                userHP -= monsterRandomDmg;
-                yield return new WaitForSeconds(1f);
-                monsterAnimation.SetBool("Attack2", false);
+                if (hP > 0)
+                {
+                    monsterAnimation.SetBool("Attack2", true);
+                    userHP -= monsterRandomDmg;
+                    yield return new WaitForSeconds(1f);
+                    monsterAnimation.SetBool("Attack2", false);
 
-                Debug.LogFormat("몬스터가 준 데미지 : {0}", monsterRandomDmg);
-                Debug.LogFormat("플레이어 체력 : {0}/{1}", userHP, 100);
-                Debug.Log("-------------------------------------------------");
+                    Debug.LogFormat("몬스터가 준 데미지 : {0}", monsterRandomDmg);
+                    Debug.LogFormat("플레이어 체력 : {0}/{1}", userHP, 100);
+                    Debug.Log("-------------------------------------------------");
+                }
+                attackButton_L = false;
+                attackButton_M = false;
+                attackButton_R = false;
                 attackButton_L2 = false;
                 attackButton_M2 = false;
                 attackButton_R2 = false;
@@ -257,9 +279,14 @@ public class FightCoroutine : MonoBehaviour
                     userEXP += EXP;
                     Debug.LogFormat("유저 획득 경험치 : {0}", userEXP);
                     // 변경된 체력값 적용
-                    UserInformation.player.hp = userHP;
                     Debug.Log("-------------------------------------------------");
                     // 여기 레벨업 때 돌아야할 거 추가
+                    //monsterAnimation.SetBool("Dead", true);
+                    monsterAnimation.GetComponent<MonsterClick>().isFight = false;
+                    Destroy(monsterAnimation.GetComponent<MonsterClick>().collider);
+                    Destroy(monsterAnimation.GetComponent<MonsterClick>().gameObject);
+                    hP = 30;
+                    
                     break;
 
                 }
@@ -269,7 +296,10 @@ public class FightCoroutine : MonoBehaviour
                     // 게임 엔딩
                     break;
                 }
+
+
             }
+                UserInformation.player.hp = userHP;
 
 
         }
@@ -292,7 +322,8 @@ public class FightCoroutine : MonoBehaviour
 
         AttackArea_R = GameObject.Find("AttackArea");
         AttackArea_N = GameObject.Find("AttackArea2");
-
+        RookieUI = GameObject.Find("RookieHUD");
+        NeighbourUI = GameObject.Find("NeighbourHUD");
         weaponUI = GameObject.Find("UserWeaponUI");
 
         animator = transform.GetComponent<Animator>(); // Animator 
@@ -302,6 +333,10 @@ public class FightCoroutine : MonoBehaviour
 
         ImageSc6();
         ImageSc8();
+        ImageSc13();
+        ImageSc15();
+
+
 
         //StartCoroutine(BattleLoop());
     }
@@ -324,6 +359,7 @@ public class FightCoroutine : MonoBehaviour
                 if (collider != null && collider.CompareTag("Rookie"))
                 {
                     ImageSc7();
+
                 }
                 if (collider != null && collider.CompareTag("Neighbour"))
                 {
@@ -400,25 +436,50 @@ public class FightCoroutine : MonoBehaviour
     // Start is called before the first frame update
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Rookie") || collision.tag.Equals("Neighbour"))
-        {
-            animator.SetBool("WaitingSpearAttack", true);
-            ImageSc11();
+
+            if (collision.tag.Equals("Rookie"))
+            {
+                animator.SetBool("WaitingSpearAttack", true);
+
+                ImageSc12();
+                ImageSc11();
 
         }
+        else if (collision.tag.Equals("Neighbour"))
+            {
+                animator.SetBool("WaitingSpearAttack", true);
+
+                ImageSc14();
+
+                ImageSc11();
+
+            }
+
+        
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Rookie") || collision.tag.Equals("Neighbour"))
-        {
 
 
-            ImageSc10();
-            animator.SetBool("WaitingSpearAttack", false);
 
+            if (collision.tag.Equals("Rookie"))
+            {
+                animator.SetBool("WaitingSpearAttack", false);
+                ImageSc10();
+
+                ImageSc13();
+            }
+            else if (collision.tag.Equals("Neighbour"))
+            {
+                animator.SetBool("WaitingSpearAttack", false);
+                ImageSc10();
+                ImageSc15();
 
         }
+
+
+
     }
 
     //public void OnPointerClick(PointerEventData eventData)
@@ -573,6 +634,44 @@ public class FightCoroutine : MonoBehaviour
 
         weaponUI.transform.localScale = newScale;
     }
+
+    public void ImageSc12()
+    {
+        Vector3 uiImageScale = RookieUI.transform.localScale;
+
+        Vector3 newScale = new Vector3(1f, 1f, 1f);
+
+        RookieUI.transform.localScale = newScale;
+        
+    }
+    public void ImageSc13()
+    {
+        Vector3 uiImageScale = RookieUI.transform.localScale;
+
+        Vector3 newScale = new Vector3(0.001f, 0.001f, 0.001f);
+
+        RookieUI.transform.localScale = newScale;
+        
+    }
+
+    public void ImageSc14()
+    {
+        Vector3 uiImageScale = NeighbourUI.transform.localScale;
+
+        Vector3 newScale = new Vector3(1f, 1f, 1f);
+
+        NeighbourUI.transform.localScale = newScale;
+
+    }
+    public void ImageSc15()
+    {
+        Vector3 uiImageScale = NeighbourUI.transform.localScale;
+
+        Vector3 newScale = new Vector3(0.001f, 0.001f, 0.001f);
+
+        NeighbourUI.transform.localScale = newScale;
+    }
+
 
 
     // Neighbour 45%, 85%, 70%

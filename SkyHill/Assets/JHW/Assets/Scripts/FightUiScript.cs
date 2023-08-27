@@ -9,9 +9,7 @@ using UnityEngine.UI;
 public class FightUiScript : MonoBehaviour, IPointerClickHandler
 
 {
-    public GameObject leftHandImg; // 활성화할 UI 이미지
-    public GameObject rightHandImg; // 활성화할 UI 이미지
-    public GameObject attackTypeImg; // 활성화할 UI 이미지
+
 
 
     public GameObject AttackArea_R;
@@ -23,21 +21,11 @@ public class FightUiScript : MonoBehaviour, IPointerClickHandler
     public void Start()
     {
 
-
-
-        leftHandImg = GameObject.Find("LeftHand");
-        rightHandImg = GameObject.Find("RightHand");
-        attackTypeImg = GameObject.Find("AttackType");
-
-
         AttackArea_R = GameObject.Find("AttackArea");
         AttackArea_N = GameObject.Find("AttackArea2");
 
 
 
-        //ImageSc();
-        //ImageSc1();
-        ImageSc2();
         ImageSc6();
         ImageSc8();
 
@@ -76,27 +64,7 @@ public class FightUiScript : MonoBehaviour, IPointerClickHandler
 
     }
 
-    // Start is called before the first frame update
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag.Equals("Rookie") || collision.tag.Equals("Neighbour"))
-        {
-            Debug.Log("몬스터랑 만났다!");
-            ActivateUIImages();
 
-        }
-    }
-
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag.Equals("Rookie") || collision.tag.Equals("Neighbour"))
-        {
-            Debug.Log("몬스터랑 만났다!");
-
-            ActivateUIImages2();
-
-        }
-    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -109,77 +77,10 @@ public class FightUiScript : MonoBehaviour, IPointerClickHandler
 
     }
 
-    private void ActivateUIImages()
-    {
-
-        ImageSc3();
-        ImageSc4();
-        ImageSc5();
-
-    }
-
-    private void ActivateUIImages2()
-    {
-        ImageSc();
-        ImageSc1();
-        ImageSc2();
-    }
 
 
 
-    public void ImageSc()
-    {
-        Vector3 uiImageScale = leftHandImg.transform.localScale;
 
-        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
-
-        leftHandImg.transform.localScale = newScale;
-    }
-
-    public void ImageSc1()
-    {
-        Vector3 uiImageScale = rightHandImg.transform.localScale;
-
-        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
-
-        rightHandImg.transform.localScale = newScale;
-    }
-
-    public void ImageSc2()
-    {
-        Vector3 uiImageScale = attackTypeImg.transform.localScale;
-
-        Vector3 newScale = new Vector3(0.001f, 0.001f, 0);
-
-        attackTypeImg.transform.localScale = newScale;
-    }
-
-    public void ImageSc3()
-    {
-        Vector3 uiImageScale = leftHandImg.transform.localScale;
-
-        Vector3 newScale = new Vector3(1, 1, 0);
-
-        leftHandImg.transform.localScale = newScale;
-    }
-
-    public void ImageSc4()
-    {
-        Vector3 uiImageScale = rightHandImg.transform.localScale;
-
-        Vector3 newScale = new Vector3(1, 1, 0);
-
-        rightHandImg.transform.localScale = newScale;
-    }
-
-    public void ImageSc5()
-    {
-        Vector3 uiImageScale = attackTypeImg.transform.localScale;
-
-        Vector3 newScale = new Vector3(0.7f, 0.7f, 0);
-
-        attackTypeImg.transform.localScale = newScale;
-    }
 
     public void ImageSc6()
     {

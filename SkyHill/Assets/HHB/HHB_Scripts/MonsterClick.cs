@@ -6,12 +6,14 @@ public class MonsterClick : MonoBehaviour
 {
     public MonsterData monsterData;
     public MonsterData monsterData2;
-
+    public BoxCollider2D collider;
     Animator animator;
+    public bool isFight = false;
 
     public void Start()
     {
         animator = GetComponent<Animator>();
+        collider = GetComponent<BoxCollider2D>();
     }
 
     public void Update()
@@ -27,7 +29,7 @@ public class MonsterClick : MonoBehaviour
         string gameObjTag = gameObject.tag;
         if (gameObjTag == "Rookie")
         {
-            
+
             string monsterName = monsterData.MonsterName;
             float monsterHp = monsterData.MonsterHP;
             float monsterMaxDamage = monsterData.MonsterMaxDamage;
@@ -37,9 +39,12 @@ public class MonsterClick : MonoBehaviour
 
             //FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
             //    monsterMinDamage, monsterEXP);
-
-            StartCoroutine(FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
-                monsterMinDamage, monsterEXP , animator));
+            if (!isFight)
+            {
+                isFight=true;
+                StartCoroutine(FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
+                    monsterMinDamage, monsterEXP, animator ));
+            }
         }
 
 
@@ -58,9 +63,11 @@ public class MonsterClick : MonoBehaviour
 
             //FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
             //    monsterMinDamage, monsterEXP);
-
-            StartCoroutine(FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
-                monsterMinDamage, monsterEXP, animator));
+            if (!isFight)
+            {
+                StartCoroutine(FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
+                    monsterMinDamage, monsterEXP, animator));
+            }
         }
     }
 }

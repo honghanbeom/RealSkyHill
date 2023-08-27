@@ -17,6 +17,11 @@ public class HpUI : MonoBehaviour
         UpdateUI(UserInformation.player.hp);
     }
 
+    private void Update()
+    {
+        UpdateUI(UserInformation.player.hp);
+    }
+
     void UpdateUI(float hpValue)
     {
         float fillAmount = hpValue / maxHp;
