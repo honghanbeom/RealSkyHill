@@ -8,7 +8,7 @@ public class WallHungerEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.LogFormat("유저 중독 여부 : {0}",UserInformation.player.poision);
+        Debug.LogFormat("유저 중독 여부 : {0}", UserInformation.player.poision);
         float userHunger = UserInformation.player.hunger;
         float userHp = UserInformation.player.hp;
         bool userPoision = UserInformation.player.poision;
@@ -34,7 +34,7 @@ public class WallHungerEffect : MonoBehaviour
             // 변경값을 적용
             UserInformation.player.hunger = userHunger;
             UserInformation.player.hp = userHp;
-            Debug.Log(UserInformation.player.hunger);
+            UserInformation.player.poision = userPoision;   
         }
     }
 

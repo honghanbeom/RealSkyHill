@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlusButtonManager : MonoBehaviour
 {
-    
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +35,6 @@ public class PlusButtonManager : MonoBehaviour
         WeaponItem.weaponItem.ApplyWeapon(UserInformation.player.myEquipWeapon[0]);
         //WeaponItem.weaponItem.ApplyWeapon(UserInformation.player.myEquipWeapon[1]);
         WeaponImage weaponImage = FindObjectOfType<WeaponImage>();
-
         // 무기 이미지 관리하고
         weaponImage.ControlLeftImage(UserInformation.player.myEquipWeapon);
         //weaponImage.ControlRightImage(UserInformation.player.myEquipWeapon);

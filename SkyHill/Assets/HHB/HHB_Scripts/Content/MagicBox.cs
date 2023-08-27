@@ -27,16 +27,21 @@ public class MagicBox : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
             {
                 // 회복아이템
                 // (100 ~ 104) EMERGENCY , (0 ~ 3) ROOTEMERGENCY
-                if ((itemId >= 100 && itemId <= 104) || (itemId >= 0 && itemId <= 3))
+                if (((itemId >= 100 && itemId <= 104) || (itemId >= 0 && itemId <= 3) )&& itemId != 103)
                 {
                     //Debug.LogFormat("유저 체력 : {0}",UserInformation.player.hp);
                     hpItem.UseHealthItem(itemId);
                     //Debug.LogFormat("유저 체력 : {0}", UserInformation.player.hp);
                 }
+                if (itemId == 103)
+                {
+                    hpItem.UseAntidote(itemId);  
+                }
                 // (800 ~ 808) SPOILEDFOOD
-                else if (itemId >= 800 && itemId <=808)
+                else if (itemId >= 800 && itemId <= 808)
                 {
                     hpItem.UseSpoiledFood(itemId);
+                    //Debug.LogFormat("중독 여부 : {0}", UserInformation.player.poision);
                 }
                 // 음식아이템
                 // (700 ~ 713) FRESHFOOD, (900~917) ROOTFOOD, (1000~1016) MAKINGFOOD

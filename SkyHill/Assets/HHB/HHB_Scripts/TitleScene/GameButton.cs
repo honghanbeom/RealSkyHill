@@ -30,6 +30,6 @@ public class GameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void NextScene()
     {
-        SceneManager.LoadScene("HHB_GameScene");  
+        SceneManager.LoadScene("230826HHB");  
     }
 }

@@ -55,6 +55,8 @@ public class StatUI : MonoBehaviour
         {
             UserInformation.player.exp = 0;
             UserInformation.player.maxEXP += 50;
+            UserInformation.player.userLevel++;
+            UserInformation.player.skillPoint += 5;
         }
         else { /* Do Nothing*/ }
     }

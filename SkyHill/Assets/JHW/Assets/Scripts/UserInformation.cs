@@ -21,7 +21,7 @@ public class UserInformation : MonoBehaviour
 
 
     public float hp = 100.0f;
-    public float hunger = 50.0f;
+    public float hunger = 51.0f;
     public float minAttackDamage = 1.0f;
     public float maxAttackDamage = 2.0f;
     public int exp = 0;

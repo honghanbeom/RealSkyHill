@@ -983,8 +983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e999a080e052ed141a60b0fb0d10d99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  user: {fileID: 0}
+  user: {fileID: 1515477981}
   rainObj: {fileID: 625997454}
+  isRain: 1
 --- !u!212 &625997456
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1023,8 +1024,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1346379755
-  m_SortingLayer: 5
+  m_SortingLayerID: 383049835
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -447829108, guid: b03847b5f5292a04db001903cba7e6fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1037,21 +1038,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &625997457
-Transform:
+--- !u!224 &625997457
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625997454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.27112, y: -14.396375, z: -6478.3687}
-  m_LocalScale: {x: 287.9275, y: 287.9275, z: 71.98187}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 287.9275, y: 287.9275, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 623178026}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 35.27112, y: -14.396375}
+  m_SizeDelta: {x: 11.33, y: 6.37}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &741772808
 GameObject:
   m_ObjectHideFlags: 0

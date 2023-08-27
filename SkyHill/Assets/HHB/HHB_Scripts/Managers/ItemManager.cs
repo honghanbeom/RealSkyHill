@@ -59,6 +59,8 @@ public class ItemManager : MonoBehaviour
         //myInvenList.Add(406);
         //myInvenList.Add(306);
         // 15개 12개 나오는중
+        myInvenList.Add(103);
+
         myInvenList.Add(406);
         myInvenList.Add(306);
         myInvenList.Add(401);
@@ -78,6 +80,7 @@ public class ItemManager : MonoBehaviour
         myInvenList.Add(801);
         myInvenList.Add(801);
         myInvenList.Add(801);
+        myInvenList.Add(909);
         myInvenList.Add(1000);
         myInvenList.Add(1001);
         myInvenList.Add(1002);

@@ -95,27 +95,29 @@ public class HpItem : MonoBehaviour, IHPItem
         }
 
         // 배고픔 추가 로직 && 중독로직 && 데미지로직
-        if (UserInformation.player.hunger + hungry >= 100f)
-        {
-            UserInformation.player.hunger = 100f;
-            UserInformation.player.hp -= damamge;
 
-            if (poisionProb > randomProb)
-            { 
-                UserInformation.player.poision = true;
-            }
-        }
-        else if (UserInformation.player.hunger + hungry < 100f)
-        {
-            UserInformation.player.hp -= damamge;
-            UserInformation.player.hunger += hungry;
+        UserInformation.player.hp -= damamge;
+        UserInformation.player.hunger += hungry;
 
-            if (poisionProb > randomProb)
-            {
-                UserInformation.player.poision = true;
-            }
+        if (poisionProb > randomProb)
+        {
+            UserInformation.player.poision = true;
+            Poision poision = FindObjectOfType<Poision>();
+            poision.PoisionImageControl();
         }
+
         ItemManager.myMediList.Remove(itemId);
         ItemManager.itemManager.ItemRoutine();
+    }
+
+    public void UseAntidote(int itemId)
+    {
+        if (UserInformation.player.poision == true)
+        {
+            UserInformation.player.poision = false;
+            Poision poision = FindObjectOfType<Poision>();
+            poision.PoisionImageControl();
+        }
+
     }
 }
