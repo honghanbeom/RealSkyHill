@@ -24,12 +24,8 @@ public class FightUiScript : MonoBehaviour, IPointerClickHandler
         AttackArea_R = GameObject.Find("AttackArea");
         AttackArea_N = GameObject.Find("AttackArea2");
 
-
-
         ImageSc6();
         ImageSc8();
-
-
 
     }
 
