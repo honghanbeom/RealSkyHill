@@ -8,11 +8,15 @@ public class MonsterClick : MonoBehaviour
     public MonsterData monsterData2;
     public BoxCollider2D collider;
     Animator animator;
+
+    //전투시작하고 몬스터 클릭할 때마다 스타트 코루틴 되버려서 전투여부 확인하고 전투중이면 스타트 코루틴 실행 못하게 하는 bool변수 설정 
     public bool isFight = false;
 
     public void Start()
     {
+        //몬스터 애니메이션 정보 보내주려고 설정 
         animator = GetComponent<Animator>();
+        //전투 끝날때 콜라이더 지워버리려고 설정 
         collider = GetComponent<BoxCollider2D>();
     }
 
@@ -37,8 +41,7 @@ public class MonsterClick : MonoBehaviour
             float monsterMinDamage = monsterData.MonsterMinDamage;
             float monsterEXP = monsterData.MonsterEXP;
 
-            //FightCoroutine.fight.MonsterFight(monsterName, monsterHp, monsterMaxDamage, monstetMidDamage,
-            //    monsterMinDamage, monsterEXP);
+            
             if (!isFight)
             {
                 isFight=true;
